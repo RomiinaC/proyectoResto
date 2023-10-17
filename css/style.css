@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,600&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;0,900;1,400;1,600&family=Rubik:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Rubik','Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+/* Estilo de fuente para citas o para enfatizar texto*/
+.textDestacado {
+    font-family: 'Philosopher', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin: 2%;
+    padding: 5%;
+}
+p {
+    margin: 3%;
+}
+/* Clase para contenedor flex en columna vista movil*/
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0% 2%;
+    gap: 2%;
+    align-items: stretch;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1f 1f auto;
+    gap: 2%;
+}
+
+/* HEADER */
+.header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1%;
+    background: linear-gradient(0deg, #693d24c0, #d8ccba,#d8ccba, #ffffff,#ffffff, #0d0d0d2f);
+}
+#logo {
+    max-width: 6rem;
+}
+/* Estilo para barra de navegacion lateral al abrir menu hamburguesa */
+.user-nav {
+    display: flex;
+    gap: 1rem;
+    width: 20%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbar {
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    visibility: hidden;
+    }
+ /* Quita la viñeta decorativa de todas las li*/
+li {
+    list-style: none;
+    margin: 1% 2%;
+}
+/* Quita el subrayado de todos los enlace y pone en negrita*/
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+/* Botones abrir y cerrar menu hamburguesa*/
+.menu-abrir, .menu-cerrar {
+    padding: 5%;
+    cursor: pointer;
+}
+    
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+/* MAIN */
+main {
+    padding: 0% 10%;
+    margin: 0% 2%;
+    overflow: auto;
+}
+/* Secciones del main index*/
+main section {
+    padding: 0% 5% 3%;
+}
+.intro p {
+    margin-bottom: 2%;
+}
+.intro img {
+    width: 100%;
+    padding: auto;
+    margin-top: 5%;
+}
+/* Horarios de apertura */
+.info ul li {
+    padding-top: 2%;
+    list-style-type: circle;
+}
+/* enlaces a menu, bodega y reserva*/
+.enlaces div {
+    padding: 10%;
+}
+.boton{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    background-color: #693d24;
+    color: #fff;
+    padding: 5%;
+    margin-bottom: 3%;
+}
+
+/* Tarjeta para el menu terminar de dar estilo con js*/
+.tarjeta {
+    border: 2px solid black;
+    margin: 10%;
+}
+/* Formulario para ingreso del cliente */
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin-bottom: 15%;
+}
+form input, form label {
+    margin: 2% 2%;
+    height: 40px;
+}
+fieldset {
+    margin-bottom: 25%;
+}
+form p {
+    margin: 3%;
+}
+/* FOOTER*/
+.footer {
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: 2% 5%;
+}
+.footer div {
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+}
+.footer ul {
+    padding: 0% 3%;
+}
+.footer a {
+    color: #fff;
+}
+
+/* MQery para tablet desde 768px*/
+@media screen and (min-width: 670px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5%;
+        align-items: baseline;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .menu-abrir, .menu-cerrar {
+        visibility: hidden;
+        padding: 0%;
+        margin: 0;
+        width: 0px;
+    }
+    .user-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        width: 60%;
+    }
+    .navbar{
+        visibility: visible;
+        display: flex;
+        background-color: transparent;
+        position: relative;
+        flex-direction: row;
+        padding: 0;
+        width: 80%;
+    }
+    .nav-items {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar li a {
+        font-weight: bold;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    main {
+        margin: 0;
+    }
+    .presentacion {
+        display: flex;
+        gap: 8%;
+    }
+    .presentacion img {
+        width: 50%;
+        padding: 3%;
+        margin: auto;
+    }
+    .contacto {
+        display: flex;
+        gap: 5%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .contacto iframe {
+        width: 100%
+        
+    }
+    .container-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 2%;
+    } 
+    #main-nosotros h1 {
+        grid-column: 1/7;
+    }
+    #main-nosotros .info {
+        grid-column: 1/4;
+    }
+    #main-nosotros img {
+        grid-column: 4/7;
+        padding: 2%;
+        margin:2%;
+    }
+    #main-nosotros .contacto {
+        grid-column: 1/7;
+    }  
+}
+
+@media screen and (min-width: 1200px) {
+    * {
+        font-size: 1.3rem;
+    }
+    .enlaces {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .enlaces div {
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contacto {
+        display: block;
+    }
+    .contacto iframe {
+        width: 90%;
+        height: 400px;
+        margin: 5%;
+    }
+    .container-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2%;
+    }
+}
