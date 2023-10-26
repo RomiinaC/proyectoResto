@@ -15,34 +15,128 @@
     <header class="header">
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
-            <a href="acceso-user.html"><i class='bx bxs-user bx-sm '></i></a>
-            <button class="menu-abrir" id="menu-abrir"><i class='bx bx-menu'></i></button>
+            <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></a></button>
             <nav class="navbar visible" id="navbar">
-                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i> Cerrar</button>
+                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
                     <li><a href="../index.html#home">HOME</a></li>
+                    <li><a href="acceso-user.html">ACCEDER</a></li>
                     <li><a href="menu.html">MENU</a></li>
+                    <li><a href="bodega.html">BODEGA</a></li>
                     <li><a href="reserva.html">RESERVAS</a></li>
                     <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>    
     </header>
-    <main>
+    <main id="mainReserva">
         <h1>Bienvenido a Perugia Restaurante</h1>
         <p>Nos enorgullece ser el destino preferido para aquellos que buscan una experiencia gastronómica única en Buenos Aires. Esperamos tener el placer de servirles pronto y superar sus expectativas.
+        </p>
+        <p class="textDestacado">
         ¡Haga su reserva ahora para asegurarse un lugar en esta experiencia inolvidable!</p>
         <h2>Reserva</h2>
-        <div class="cantComensales">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque sed excepturi odio sequi aut harum eaque, in quo nostrum dicta magni doloremque asperiores corporis modi vitae illo. Aliquam, a itaque.</p>
-        </div>
-        <div class="horarioDisponible">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque sed excepturi odio sequi aut harum eaque, in quo nostrum dicta magni doloremque asperiores corporis modi vitae illo. Aliquam, a itaque.</p>
-        </div>
-        <div class="lugarDisponible">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque sed excepturi odio sequi aut harum eaque, in quo nostrum dicta magni doloremque asperiores corporis modi vitae illo. Aliquam, a itaque.</p>
-        </div>
+        <form action="" id="formReserva">
+            <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
+            <input type="email" name="userId" id="userId" required autofocus>
+            <label for="passw">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
+            <input type="password" name="passw" id="passw" required>
+            <input type="submit" value="Iniciar Sesion" class="btn">
+        </form>
         
+        
+        <form action="" id="formInfoReserva">
+            <div class="cantComensales" id="comensales">
+                <h3>Cantidad de comensales</h2>
+                <div class="botonera">
+                    <button type="button" class="menos redondeo">-</button>   
+                    <input type="number" id="cantComensales" name="cantComensales" min="1" max="10" >
+                    <button type="button" class="mas redondeo" >+</button>
+                </div>
+            </div>
+            <div class="fechaDisponible" id="fechaDisponible">
+                <h3>Fecha disponible</h3>
+                
+            </div>
+            <div class="horarioDisponible" id="horarioDisponible">
+                <h3>Horario Disponible</h3>
+                <div class="listaHorario">
+                   <div class="turno">
+                        <h4>Mediodia</h4>
+                        <div class="hora">
+                            <label for="12hs">12 hs</label>
+                            <input type="radio" name="horario" value="12hs" id="12hs">
+                        </div>
+                        <div class="hora">
+                            <label for="12.30hs">12.30 hs</label>
+                            <input type="radio" name="horario" value="12.30hs" id="12.30hs">
+                        </div>
+                        <div class="hora">
+                            <label for="13hs">13 hs</label>
+                        <input type="radio" name="horario" value="13hs" id="13hs">
+                        </div>
+                        <div class="hora">
+                            <label for="13.30hs">13.30 hs</label>
+                            <input type="radio" name="horario" value="13.30hs" id="13.30hs">
+                        </div>
+                        <div class="hora">
+                            <label for="14hs">14 hs</label>
+                        <input type="radio" name="horario" value="14hs" id="14hs">
+                        </div>
+                        <div class="hora">
+                            <label for="14.30hs">14.30 hs</label>
+                            <input type="radio" name="horario" value="14.30hs" id="14.30hs">
+                        </div>
+                        <div class="hora">
+                            <label for="15hs">15 hs</label>
+                        <input type="radio" name="horario" value="15hs" id="15hs">
+                        </div>
+                        <div class="hora">
+                            <label for="15.30hs">15.30 hs</label>
+                            <input type="radio" name="horario" value="15.30hs" id="15.30hs">
+                        </div>
+                   </div>
+                    <div class="turno">
+                        <h4>Noche</h4>
+                    <div class="hora">
+                        <label for="20hs">20 hs</label>
+                        <input type="radio" name="horario" value="20hs" id="20hs">
+                    </div>
+                        <div class="hora">
+                            <label for="20.30hs">20.30 hs</label>
+                            <input type="radio" name="horario" value="20.30hs" id="20.30hs">
+                        </div>
+                        <div class="hora">
+                            <label for="21hs">21 hs</label>
+                            <input type="radio" name="horario" value="21hs" id="21hs">
+                        </div>
+                        <div class="hora">
+                            <label for="21.30hs">21.30 hs</label>
+                            <input type="radio" name="horario" value="21.30hs" id="21.30hs">
+                        </div>
+                        <div class="hora">
+                            <label for="22hs">22 hs</label>
+                            <input type="radio" name="horario" value="22hs" id="22hs">
+                        </div>
+                        <div class="hora">
+                            <label for="22.30hs">22.30 hs</label>
+                            <input type="radio" name="horario" value="22.30hs" id="22.30hs">
+                        </div>
+                        <div class="hora">
+                            <label for="23hs">23 hs</label>
+                        <input type="radio" name="horario" value="23hs" id="23hs">
+                        </div>
+                        <div class="hora">
+                            <label for="23.30hs">23.30 hs</label>
+                            <input type="radio" name="horario" value="23.30hs" id="23.30hs">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <input type="submit">
+        </form>
     </main>
     <footer class="footer container">
         <div class="footContacto">
@@ -51,6 +145,7 @@
                 <li><i class='bx bx-world'></i> www.perugiaresto.com</li>
                 <li><i class='bx bxs-phone'></i> 4112233</li>
                 <li><i class='bx bxl-whatsapp' ></i><a href="https://api.whatsapp.com/"> 011 15333787</a></li>
+                <li><i class='bx bxl-gmail'></i> perugia@gmail.com</li>
                 <li><i class='bx bxl-facebook-circle' ></i><a href="https://www.facebook.com/"> Perugia Restaurant</a></li>
                 <li><i class='bx bxl-instagram' ></i><a href="https://www.instagram.com/"> Perugia Restaurant</a></li>
                 <li><i class='bx bxl-gmail'></i><a href="https://www.google.com/intl/es-419/gmail/about/"> perugia@gmail.com</a></li>
@@ -64,6 +159,7 @@
                 <li><a href="acceso-user.html">Acceso</a></li>
                 <li><a href="reserva.html">Reservas</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
         <div class="footLegal">
@@ -75,5 +171,6 @@
         </div>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/reserva.js"></script>
 </body>
 </html>

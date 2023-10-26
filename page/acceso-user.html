@@ -15,38 +15,46 @@
     <header class="header">
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
-            <a href="acceso-user.html"><i class='bx bxs-user bx-sm '></i></a>
-            <button class="menu-abrir" id="menu-abrir"><i class='bx bx-menu'></i></button>
+            <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></a></button>
             <nav class="navbar visible" id="navbar">
-                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i> Cerrar</button>
+                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
                     <li><a href="../index.html#home">HOME</a></li>
+                    <li><a href="acceso-user.html">ACCEDER</a></li>
                     <li><a href="menu.html">MENU</a></li>
+                    <li><a href="bodega.html">BODEGA</a></li>
                     <li><a href="reserva.html">RESERVAS</a></li>
                     <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>    
     </header>
-    <main>
+    <main id="mainAcceso">
         <h1>Bienvenido a Perugia Restaurante!</h1>
         <h2>Ingresa</h2>
         <fieldset>
             <form action="">
-                <label for="user-name">Direccion de correo electronico</label>
-                <input type="text" name="user-name" id="user-name" required>
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" required>
-                <input type="button" value="Log in">
+                <label for="userId">Direccion de correo electronico</label>
+                <input type="email" name="userId" id="userId" required>
+                <label for="passw">Contraseña</label>
+                <input type="password" name="passw" id="passw" required>
+                <input type="button" value="Ingresar">
             </form>
         </fieldset>
         <h2>Registrate</h2>
         <fieldset>
             <form action="">
-                <label for="new-user">Direccion de correo electronico</label>
-                <input type="text" id="new-user" name="new-user">
-                <p>Te llegara un email a tu casilla de correo electronico con un codigo.</p>
+                <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
+                <input type="text" id="userName" name="userName" required>
+                <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
+                <input type="text" id="userLastName" name="userLastName" required>
+                <label for="tel">Telefono</label>
+                <input type="tel" name="tel" id="tel">
+                <label for="userIdNew">Direccion de correo electronico <abbr title="required" aria-label="required"> * </abbr></label>
+                <input type="email" id="userIdNew" name="userIdNew" required>
                 <input type="button" value="Registrate">
+                <p>Te llegara un email de confirmacion a tu casilla de correo electronico.</p>
             </form>
         </fieldset>
     </main>
@@ -57,6 +65,7 @@
                 <li><i class='bx bx-world'></i> www.perugiaresto.com</li>
                 <li><i class='bx bxs-phone'></i> 4112233</li>
                 <li><i class='bx bxl-whatsapp' ></i><a href="https://api.whatsapp.com/"> 011 15333787</a></li>
+                <li><i class='bx bxl-gmail'></i> perugia@gmail.com</li>
                 <li><i class='bx bxl-facebook-circle' ></i><a href="https://www.facebook.com/"> Perugia Restaurant</a></li>
                 <li><i class='bx bxl-instagram' ></i><a href="https://www.instagram.com/"> Perugia Restaurant</a></li>
                 <li><i class='bx bxl-gmail'></i><a href="https://www.google.com/intl/es-419/gmail/about/"> perugia@gmail.com</a></li>
@@ -70,6 +79,7 @@
                 <li><a href="acceso-user.html">Acceso</a></li>
                 <li><a href="reserva.html">Reservas</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
         <div class="footLegal">
@@ -81,5 +91,6 @@
         </div>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/usuarios.js"></script>
 </body>
 </html>

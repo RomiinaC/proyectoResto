@@ -32,20 +32,14 @@
         </div>    
     </header>
     <main>
-        <h1>Menu</h1>
-        <section class="container-card" id="contenedorTarjeta">
-            <div v-for="plato in menu" class="tarjeta">
-                <h2>{{plato.nombre}}</h2>
-                <ul>
-                    <li v-for="ing in plato.ingredientes">{{ing}}</li>
-                </ul>
-                <p>{{plato.precio}}</p>
-        
-            </section >
-            <section id="prueba">
-
-            </section>
-            
+        <h1>Bodega</h1>
+        <section class="container-card" id="contenedorBodega">
+            <div v-for="vino in bodega" class="tarjeta">
+                <h2>{{vino.nombre}}</h2>
+                <h3>{{vino.bodega}}</h3>
+                <p>{{vino.textura}}</p>
+                <p>{{vino.recomendacion}}</p>
+        </section >
     </main>
     <footer class="footer container">
         <div class="footContacto">
@@ -80,9 +74,8 @@
         </div>
     </footer>
     <script src="https://unpkg.com/vue@next/dist/vue.global.js"></script>
-    <script src="../js/dataMenuJSON.js"></script>
-    <script src="../js/dataMenu.js"></script>
-    <script src="../js/data.js"></script>
+    <script src="../js/dataBodegaJSON.js"></script>
+    <script src="../js/dataBodega.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

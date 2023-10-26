@@ -10,13 +10,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon-16x16.png">
     <link rel="stylesheet" href="../css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
 </head>
 <body>
     <header class="header">
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
-            <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></a></button>
+            <button class="menu-abrir" id="menu-abrir"><a href="acceso-user.html"><i class='bx bxs-user bx-sm '></i></a></button>
             <nav class="navbar visible" id="navbar">
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
@@ -31,21 +30,50 @@
             </nav>
         </div>    
     </header>
-    <main>
-        <h1>Menu</h1>
-        <section class="container-card" id="contenedorTarjeta">
-            <div v-for="plato in menu" class="tarjeta">
-                <h2>{{plato.nombre}}</h2>
+    <main id="main-nosotros" class="grid-container">
+        <p>Poner foto banner o carrousel</p>
+            <h1>CONTACTO</h1>
+        <section class="contacto">
+            <div>
                 <ul>
-                    <li v-for="ing in plato.ingredientes">{{ing}}</li>
-                </ul>
-                <p>{{plato.precio}}</p>
-        
-            </section >
-            <section id="prueba">
-
-            </section>
-            
+                    <li><i class='bx bx-map'></i><a href="https://maps.app.goo.gl/ypRhK2Ltp5LTVjq6A"><span>Direccion: </span>Buenos Aires</a></li>
+                    <li><i class='bx bxs-phone'></i> <span>Telefono: </span>4112233</li>
+                    <li><i class='bx bxl-whatsapp' ></i><span>WhatsApp:</span> 011 15333787</li>
+                    <li><i class='bx bxl-gmail'></i> <span>E-mail: </span>perugia@gmail.com</li>
+                    <li><i class='bx bx-world'></i> www.perugiarestaurante.com</li>
+                    <li><i class='bx bxl-facebook-circle' ></i> Perugia Restaurant</li>
+                    <li><i class='bx bxl-instagram' ></i> Perugia Restaurant</li> 
+                </ul> 
+            </div>
+            <div>
+                <form action="">
+                    <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="text" id="userName" name="userName">
+                    <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="text" id="userLastName" name="userLastName">
+                    <label for="email">Email <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="tel">Telefono</label>
+                    <input type="tel" name="tel" id="tel">
+                    <label for="motivo">Motivo</label>
+                    <select name="motivoConsulta" id="motivo">
+                        <option value="none">Por favor seleccione un motivo</option>
+                        <option value="reservaMesa">Reservar mesa</option>
+                        <option value="reservaEvento">Reservar evento</option>
+                        <option value="presupuesto">Presupuesto</option>
+                        <option value="laboral">Trabajar en Perugia</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <label for="consulta">Mensaje</label>
+                    <textarea name="consulta" id="consulta" cols="30" rows="10"></textarea>
+                    <input type="button" value="Enviar">
+                    <input type="button" value="Borrar">
+                </form>
+            </div>
+            <div class=".iframe">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.06683419808!2d-58.38157!3d-34.603739!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1697161997253!5m2!1ses-419!2sar" width="80%"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+            </div>
+        </section>
     </main>
     <footer class="footer container">
         <div class="footContacto">
@@ -79,10 +107,6 @@
             </ul>
         </div>
     </footer>
-    <script src="https://unpkg.com/vue@next/dist/vue.global.js"></script>
-    <script src="../js/dataMenuJSON.js"></script>
-    <script src="../js/dataMenu.js"></script>
-    <script src="../js/data.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
