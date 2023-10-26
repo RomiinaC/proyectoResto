@@ -20,6 +20,10 @@ h1, h2, h3, h4, h5 {
 p {
     margin: 3%;
 }
+img {
+    width: 100%;
+    height: 100%;
+}
 .redondeo {
     border-radius:50%;
 }
@@ -70,6 +74,7 @@ p {
     padding: 2rem;
     background-color: #fff;
     visibility: hidden;
+    z-index: 1;
     }
  /* Quita la viñeta decorativa de todas las li*/
 li {
@@ -160,6 +165,38 @@ fieldset {
 form p {
     margin: 3%;
 }
+/* pag contacto*/
+/*carrusel*/
+.carrusel {
+    position: relative;
+    overflow: hidden;
+}
+.imgCarrusel {
+    width: 100%;
+    height: 80vh;
+    display: block;
+}
+#adelanteCarrusel {
+    right: 10px;
+  }
+  
+#atrasCarrusel {
+    left: 10px;
+  }
+#atrasCarrusel, #adelanteCarrusel {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
 /* pag reservas*/
 #mainReserva {
     padding: 0% 10%;
@@ -320,7 +357,7 @@ fieldset {
     #mainNosotros img {
         width: 70%;
     }
-    .contacto {
+    #mainNosotros .contacto {
         width: 100%;
         display: flex;
         align-items: center;
@@ -357,7 +394,9 @@ fieldset {
     /* pag reserva */
     #mainReserva {
         padding: 0% 20%;
+    
     }
+    /* pag contacto */
 }
 @media screen and (min-width:900px) {
     * {

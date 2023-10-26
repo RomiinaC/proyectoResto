@@ -30,21 +30,23 @@
             </nav>
         </div>    
     </header>
-    <main id="main-nosotros" class="grid-container">
-        <p>Poner foto banner o carrousel</p>
+    <main id="main-contacto">
+        <div id="carrusel" class="carrusel">
+                <button id="atrasCarrusel"><</button>
+                <div class="containerCarrusel" id="containerCarrusel">
+                    <img src="../image/plate-with-different-types-kebab.jpg" alt="" class="imgCarrusel">
+                </div>
+                <button id="adelanteCarrusel">></button>
+            </div>
+            
+        </div>
+        
+
+
+
+
             <h1>CONTACTO</h1>
         <section class="contacto">
-            <div>
-                <ul>
-                    <li><i class='bx bx-map'></i><a href="https://maps.app.goo.gl/ypRhK2Ltp5LTVjq6A"><span>Direccion: </span>Buenos Aires</a></li>
-                    <li><i class='bx bxs-phone'></i> <span>Telefono: </span>4112233</li>
-                    <li><i class='bx bxl-whatsapp' ></i><span>WhatsApp:</span> 011 15333787</li>
-                    <li><i class='bx bxl-gmail'></i> <span>E-mail: </span>perugia@gmail.com</li>
-                    <li><i class='bx bx-world'></i> www.perugiarestaurante.com</li>
-                    <li><i class='bx bxl-facebook-circle' ></i> Perugia Restaurant</li>
-                    <li><i class='bx bxl-instagram' ></i> Perugia Restaurant</li> 
-                </ul> 
-            </div>
             <div>
                 <form action="">
                     <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
@@ -70,7 +72,19 @@
                     <input type="button" value="Borrar">
                 </form>
             </div>
-            <div class=".iframe">
+            <div>
+                <ul>
+                    <li><i class='bx bx-map'></i><span>Direccion: </span><a href="https://maps.app.goo.gl/ypRhK2Ltp5LTVjq6A">Buenos Aires</a></li>
+                    <li><i class='bx bxs-phone'></i> <span>Telefono: </span>4112233</li>
+                    <li><i class='bx bxl-whatsapp' ></i><span>WhatsApp:</span> 011 15333787</li>
+                    <li><i class='bx bxl-gmail'></i> <span>E-mail: </span>perugia@gmail.com</li>
+                    <li><i class='bx bx-world'></i> www.perugiarestaurante.com</li>
+                    <li><i class='bx bxl-facebook-circle' ></i> Perugia Restaurant</li>
+                    <li><i class='bx bxl-instagram' ></i> Perugia Restaurant</li> 
+                </ul> 
+            </div>
+            
+            <div class="iframe">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.06683419808!2d-58.38157!3d-34.603739!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1697161997253!5m2!1ses-419!2sar" width="80%"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
             </div>
         </section>
@@ -107,6 +121,7 @@
             </ul>
         </div>
     </footer>
+    <script src="../js/contacto.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
