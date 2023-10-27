@@ -34,12 +34,19 @@
     <main>
         <h1>Bodega</h1>
         <section class="container-card" id="contenedorBodega">
-            <div v-for="vino in bodega" class="tarjeta">
-                <img :src="`../image/bodega/${vino.foto}`" :alt="vino.nombre">
-                <h2>{{vino.nombre}}</h2>
-                <h3>{{vino.bodega}}</h3>
-                <p>{{vino.textura}}</p>
-                <p>{{vino.recomendacion}}</p>
+            <div v-for="vino in bodega" class="tarjeta" id="tarjetaBodega">
+                <div class="imgBodega">
+                    <img :src="`../image/bodega/${vino.foto}`" :alt="vino.nombre" >
+                </div>
+                <div>
+                    <h2>{{vino.nombre}}</h2>
+                    <h3>{{vino.bodega}}</h3>
+                </div>
+                <div>
+                    <p>{{vino.textura}}</p>
+                    <p>{{vino.recomendacion}}</p>
+                </div>
+            </div>   
         </section >
     </main>
     <footer class="footer container">

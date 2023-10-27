@@ -22,7 +22,6 @@ p {
 }
 img {
     width: 100%;
-    height: 100%;
 }
 .redondeo {
     border-radius:50%;
@@ -138,11 +137,24 @@ main img {
     padding: 5%;
     margin-bottom: 3%;
 }
-
+/*Pag menu*/
 /* Tarjeta para el menu terminar de dar estilo con js*/
 .tarjeta {
-    border: 2px solid black;
+    border: 1px solid #0d0d0d;
+    border-radius: 3%;
     margin: 10%;
+    box-shadow: 5px 6px 9px 0px rgba(0,0,0,0.5);
+    padding: 8%;
+}
+/*Pag bodega*/
+.imgBodega img {
+    max-height: 40vh;
+    width: auto;
+}
+#tarjetaBodega{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /* page Acceso Formulario para ingreso del cliente */
 #mainAcceso {
@@ -372,11 +384,16 @@ fieldset {
     /*Pag menu*/
     .container-card {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 2%;
+        grid-template-columns: 1fr 1fr;
         padding: 0% 5%;
     } 
-    
+    .subtMenu {
+        color: #693d24;
+        grid-column: 1/3;
+        font-style: italic;
+        text-align: start;
+    }
+    /* pag nosotros */
     #main-nosotros h1 {
         grid-column: 1/7;
     }
@@ -494,11 +511,15 @@ fieldset {
         height: 400px;
         margin: 5%;
     }
+    /*pag menu*/
     .container-card {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 2%;
     }
+    .subtMenu {
+        grid-column: 1/4;
+    }
+    /*Footer*/
     .footer {
         font-size: 1rem;
     }
