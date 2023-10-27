@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     margin: 2%;
-    padding: 4%;
+    padding: 2%;
 }
 p {
     margin: 3%;
@@ -53,6 +53,10 @@ img {
 #logo {
     max-width: 5rem;
 }
+.header a:hover {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000, 0 0 25px #693d24, 0 0 5px #fff;
+}
 /* Estilo para barra de navegacion lateral al abrir menu hamburguesa */
 .user-nav {
     display: flex;
@@ -69,16 +73,19 @@ img {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem;
-    background-color: #fff;
+    background-color: #d8ccba;
     visibility: hidden;
     z-index: 1;
+    box-shadow: -20px 20px 80px 80px #4e2c1c;
+    border-left: outset;
+    border-bottom: outset;
     }
  /* Quita la viñeta decorativa de todas las li*/
 li {
     list-style: none;
-    margin: 1% 2%;
+    margin: 10% 2%;
 }
 /* Quita el subrayado de todos los enlace y pone en negrita*/
 a {
@@ -94,7 +101,8 @@ a {
 #menu-cerrar {
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: .6rem;
+    border: inset;
 }
 .menu-abrir, .menu-cerrar {
     padding: 8%;
@@ -125,7 +133,7 @@ main img {
 }
 /* enlaces a menu, bodega y reserva*/
 .enlaces div {
-    padding: 10%;
+    padding: 8%;
 }
 .boton{
     display: block;
@@ -136,8 +144,35 @@ main img {
     color: #fff;
     padding: 5%;
     margin-bottom: 3%;
+    border: inset;
 }
-/*Pag menu*/
+/* ------Pag Acceso Formulario para ingreso del cliente */
+#mainAcceso {
+    padding: 0% 15%;
+}
+#mainAcceso h1, #mainAcceso h2{
+    margin-bottom: 10%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin-bottom: 15%;
+}
+form input, form .btn, form select {
+    margin: 8% 0%;
+    height: 40px;
+}
+fieldset {
+    margin-bottom: 30%;
+    padding: 10%;
+}
+form p {
+    margin: 3%;
+}
+
+/*----------- Pag menu*/
+
 /* Tarjeta para el menu terminar de dar estilo con js*/
 .tarjeta {
     border: 1px solid #0d0d0d;
@@ -150,7 +185,7 @@ main img {
     transform: scale(1.2,1.2);
     box-shadow: 6px 6px 20px 10px rgba(11, 210, 224, 0.5);
 }
-/*Pag bodega*/
+/* --------------- Pag bodega*/
 .imgBodega img {
     max-height: 40vh;
     width: auto;
@@ -160,64 +195,14 @@ main img {
     flex-direction: column;
     align-items: center;
 }
-/* page Acceso Formulario para ingreso del cliente */
-#mainAcceso {
-    padding: 0% 15%;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-    margin-bottom: 15%;
-}
-form input, form .btn {
-    margin: 8% 0%;
-    height: 40px;
-}
-fieldset {
-    margin-bottom: 30%;
-    padding: 10%;
-}
-form p {
-    margin: 3%;
-}
-/* pag contacto*/
-/*carrusel*/
-.carrusel {
-    position: relative;
-    overflow: hidden;
-}
-.imgCarrusel {
-    width: 100%;
-    height: 80vh;
-    display: block;
-}
-#adelanteCarrusel {
-    right: 10px;
-  }
-  
-#atrasCarrusel {
-    left: 10px;
-  }
-#atrasCarrusel, #adelanteCarrusel {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-
-
-/* pag reservas*/
+/* -------------- pag reservas*/
 #mainReserva {
     padding: 0% 10%;
 }
+#formInfoReserva .btn {
+    width: 40%;
 
+}
 #formInfoReserva {
     display: none;
 }
@@ -248,13 +233,13 @@ form p {
     align-items: center;
     justify-content: space-between;
 }
-/* pag Nosotros */
+/* ---------------------  pag Nosotros */
 
 #mainNosotros {
     padding: 0% 8%;
 }
 .contacto div li{
-    padding: 4% 0%;
+    padding: 1% 0%;
 }
 .contacto iframe {
     width: 100%;
@@ -262,6 +247,39 @@ form p {
 .iframe {
     margin: 5%;
 }
+/*---------------------- pag contacto*/
+/*carrusel*/
+.carrusel {
+    position: relative;
+    overflow: hidden;
+}
+.imgCarrusel {
+    width: 100%;
+    height: 70vh;
+    display: block;
+}
+#adelanteCarrusel {
+    right: 10px;
+  }
+  
+#atrasCarrusel {
+    left: 10px;
+  }
+#atrasCarrusel, #adelanteCarrusel {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn {
+    border: outset;
+}
+
 /* FOOTER*/
 .footer {
     background-color: #0d0d0d;
@@ -309,13 +327,17 @@ fieldset {
     width: 80%; 
     padding: 5%;   
 }
-/* Pag menu terminar de dar estilo con js*/
 
 /* pag nosotros */
 .contacto .iframe iframe {
     height: 50vh;
 }
 }
+/* pag contacto */
+#contactoForm {
+    padding: 0% 20%;
+}
+
 /* mquery para tablets de 10 */
 @media screen and (min-width: 760px) {
     .menu-abrir, .menu-cerrar {
@@ -331,7 +353,6 @@ fieldset {
         padding: 1px;
         height: auto;
     }
-
     .user-nav {
         display: flex;
         align-items: center;
@@ -345,12 +366,16 @@ fieldset {
         flex-direction: row;
         justify-content: space-evenly;
         padding: 1%;
+        border: none;
+        box-shadow: 0 0 0;
     }
     .nav-items {
         display: flex;
         align-items: center;
         justify-content: center;
-       
+    }
+    .navbar ul li {
+        margin: 0% 2%;
     }
     li {
         list-style: none;
@@ -369,7 +394,24 @@ fieldset {
         margin: auto;
     }
     
-   
+     /*Pag menu*/
+     .container-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0% 5%;
+    } 
+    .subtMenu {
+        color: #693d24;
+        grid-column: 1/3;
+        font-style: italic;
+        text-align: start;
+    }
+
+    /* pag reserva */
+      #mainReserva {
+        padding: 0% 20%;
+    
+    }
     /* pag nosotros*/
     #mainNosotros {
         align-items: center;
@@ -386,22 +428,7 @@ fieldset {
     }
     .contacto div {
         padding: 2%;
-        margin: 0%;
     }
-   
-    /*Pag menu*/
-    .container-card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 0% 5%;
-    } 
-    .subtMenu {
-        color: #693d24;
-        grid-column: 1/3;
-        font-style: italic;
-        text-align: start;
-    }
-    /* pag nosotros */
     #main-nosotros h1 {
         grid-column: 1/7;
     }
@@ -416,17 +443,11 @@ fieldset {
     #main-nosotros .contacto {
         grid-column: 1/7;
     }  
-    /* pag reserva */
-    #mainReserva {
-        padding: 0% 20%;
-    
-    }
-    /* pag contacto */
+  
 }
+
+
 @media screen and (min-width:900px) {
-    * {
-        font-size: 1.1rem;
-    }
     .presentacion {
         gap: 2%;
     }
@@ -434,7 +455,7 @@ fieldset {
         display: flex;
         gap: 2%;
         justify-content: center;
-        min-height: 70vh;
+        min-height: 80vh;
     }
     .enlaces div {
         width: 30%;
@@ -442,12 +463,10 @@ fieldset {
         display: flex;
         flex-direction: column;
         justify-content: end;
-        gap: 10%;
+        gap: 8%;
         
     }
-    .footer {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    
     /* page Acceso Formulario para ingreso del cliente */
 
     fieldset {
@@ -464,6 +483,14 @@ fieldset {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-bottom: 10%;
+        gap: 0;
+    }
+    #mainNosotros img {
+        width:90%;
+    }
+    /* pag contactp*/
+   .imgCarrusel {
+        height: 90vh;
     }
     .titular,  .contacto {
         grid-column: 1/3;
@@ -471,8 +498,7 @@ fieldset {
     .contacto {
         margin: 4%;
         display: flex;
-        flex-direction: column;   
-       
+        flex-direction: column;      
     }
     #contacto {
         width: 100%;
@@ -485,22 +511,21 @@ fieldset {
     }
     .iframe {
         width: 100%;
-    }
-    #mainNosotros img {
-        width:90%;
-    }
-    
-    
+        margin: 0;
+    }    
 }
 
 
 @media screen and (min-width: 1200px) {
+    * {
+        font-size: 1.2rem;
+    }
     main section {
-        padding: 2% 6%;
+        padding: 1% 6%;
     }
     h1, h2, h3, h4 , h5 {
-        padding: 1%;
-        font-size: 1.3rem;
+        font-size: 2rem;
+        margin: 0;
     }
     .presentacion img {
         width: 30%;
@@ -509,15 +534,20 @@ fieldset {
         padding: 1%;
     }
     .enlaces div {
-        height: 80vh;
+        height: 90vh;
+    }
+    .info li {
+    margin: 2%;
+    }
+    fieldset { 
+        margin-bottom: 15%;   
     }
     .contacto {
         display: block;
     }
-    .contacto iframe {
+    .contacto .iframe iframe {
         width: 90%;
-        height: 400px;
-        margin: 5%;
+        height: 80vh;
     }
     /*pag menu*/
     .container-card {
@@ -527,15 +557,12 @@ fieldset {
     .subtMenu {
         grid-column: 1/4;
     }
-    /*Footer*/
-    .footer {
-        font-size: 1rem;
-    }
-    fieldset { 
-        margin-bottom: 15%;   
-    }
      /* pag reserva */
      #formReserva {
         padding: 0% 25%;
+    }
+     /*Footer*/
+     .footer {
+        font-size: .7rem;
     }
 }
