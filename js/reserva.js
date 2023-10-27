@@ -38,6 +38,3 @@ fechaDisp.appendChild(inputDate)
 //     }
 // }) 
 
-
-
-

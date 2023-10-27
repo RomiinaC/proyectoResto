@@ -34,12 +34,12 @@
         <h1>Bienvenido a Perugia Restaurante!</h1>
         <h2>Ingresa</h2>
         <fieldset>
-            <form action="">
-                <label for="userId">Direccion de correo electronico</label>
-                <input type="email" name="userId" id="userId" required>
-                <label for="passw">Contraseña</label>
+            <form action="" id="formAcceso">
+                <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
+                <input type="email" name="userId" id="userId" required autofocus>
+                <label for="passw">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
                 <input type="password" name="passw" id="passw" required>
-                <input type="button" value="Ingresar">
+                <input type="submit" value="Iniciar Sesion" class="btn">
             </form>
         </fieldset>
         <h2>Registrate</h2>
@@ -91,6 +91,7 @@
         </div>
     </footer>
     <script src="../js/main.js"></script>
-    <script src="../js/usuarios.js"></script>
+    <script src="../js/dataUserJSON.js"></script>
+    <script src="../js/dataUser.js"></script>
 </body>
 </html>

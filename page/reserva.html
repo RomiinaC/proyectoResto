@@ -38,11 +38,11 @@
         ¡Haga su reserva ahora para asegurarse un lugar en esta experiencia inolvidable!</p>
         <h2>Reserva</h2>
         <form action="" id="formReserva">
-            <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
-            <input type="email" name="userId" id="userId" required autofocus>
-            <label for="passw">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
-            <input type="password" name="passw" id="passw" required>
-            <input type="submit" value="Iniciar Sesion" class="btn">
+            <label for="userIdRes">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
+            <input type="email" name="userId" id="userIdRes" required autofocus>
+            <label for="passwRes">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
+            <input type="password" name="passw" id="passwRes" required>
+            <input type="submit" value="Iniciar Sesion" class="btn" onclick="handlerValidarIngreso()">
         </form>
         
         
@@ -170,5 +170,8 @@
     </footer>
     <script src="../js/main.js"></script>
     <script src="../js/reserva.js"></script>
+    <script src="../js/dataUserJSON.js"></script>
+    <script src="../js/dataUser.js"></script>
+    
 </body>
 </html>

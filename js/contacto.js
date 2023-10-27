@@ -37,3 +37,7 @@ adelante.addEventListener("click",pasarFoto)
 atras.addEventListener("click",retrocederFoto)
 
 renderizarImagen()
+
+
+
+

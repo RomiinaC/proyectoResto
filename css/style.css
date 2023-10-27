@@ -146,6 +146,10 @@ main img {
     box-shadow: 5px 6px 9px 0px rgba(0,0,0,0.5);
     padding: 8%;
 }
+.tarjeta:hover {
+    transform: scale(1.2,1.2);
+    box-shadow: 6px 6px 20px 10px rgba(11, 210, 224, 0.5);
+}
 /*Pag bodega*/
 .imgBodega img {
     max-height: 40vh;
@@ -212,6 +216,10 @@ form p {
 /* pag reservas*/
 #mainReserva {
     padding: 0% 10%;
+}
+
+#formInfoReserva {
+    display: none;
 }
 .botonera {
     display: flex;
