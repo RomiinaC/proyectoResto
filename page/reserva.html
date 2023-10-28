@@ -16,6 +16,7 @@
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
             <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></a></button>
+            <button id="cerrarSesion" onclick="cerrarSesion()"><i class='bx bx-log-out'></i></button>
             <nav class="navbar visible" id="navbar">
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
@@ -31,17 +32,20 @@
         </div>    
     </header>
     <main id="mainReserva">
-        <h1>Bienvenido a Perugia Restaurante</h1>
-        <p>Nos enorgullece ser el destino preferido para aquellos que buscan una experiencia gastronómica única en Buenos Aires. Esperamos tener el placer de servirles pronto y superar sus expectativas.
-        </p>
-        <p class="textDestacado">
-        ¡Haga su reserva ahora para asegurarse un lugar en esta experiencia inolvidable!</p>
+        <div class="bienvenidaRes">
+            <h1>Bienvenido a Perugia Restaurante</h1>
+            <p>Nos enorgullece ser el destino preferido para aquellos que buscan una experiencia gastronómica única en Buenos Aires. Esperamos tener el placer de servirles pronto y superar sus expectativas.
+            </p>
+            <p class="textDestacado">
+            ¡Haga su reserva ahora para asegurarse un lugar en esta experiencia inolvidable!</p>
+        </div>
+        
         <h2>Reserva</h2>
         <form action="" id="formReserva">
             <label for="userIdRes">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
-            <input type="email" name="userId" id="userIdRes" required autofocus>
+            <input type="email" name="userId" id="userIdRes" class="userId" autofocus>
             <label for="passwRes">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
-            <input type="password" name="passw" id="passwRes" required>
+            <input type="password" name="passw" id="passwRes"class="password" required>
             <input type="submit" value="Iniciar Sesion" class="btn" onclick="handlerValidarIngreso()">
         </form>
         

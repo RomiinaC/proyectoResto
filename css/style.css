@@ -94,9 +94,12 @@ a {
     color: #000;
 }
 /* Botones abrir y cerrar menu hamburguesa*/
-#menu-abrir {
+#menu-abrir, #cerrarSesion {
     background-color: transparent;
     border: none;
+}
+#cerrarSesion {
+    display: none;
 }
 #menu-cerrar {
     font-weight: bold;
@@ -148,10 +151,13 @@ main img {
 }
 /* ------Pag Acceso Formulario para ingreso del cliente */
 #mainAcceso {
-    padding: 0% 15%;
+    padding: 10% 15%;
 }
 #mainAcceso h1, #mainAcceso h2{
     margin-bottom: 10%;
+}
+#bienvenidaAcceso {
+    display: none;
 }
 form {
     display: flex;
@@ -198,6 +204,10 @@ form p {
 /* -------------- pag reservas*/
 #mainReserva {
     padding: 0% 10%;
+}
+#formReserva {
+    display: flex;
+    flex-direction: column;
 }
 #formInfoReserva .btn {
     width: 40%;
@@ -337,7 +347,10 @@ fieldset {
 #contactoForm {
     padding: 0% 20%;
 }
-
+/*pag reserva*/
+#mainReserva {
+    padding: 0% 15%;
+}
 /* mquery para tablets de 10 */
 @media screen and (min-width: 760px) {
     .menu-abrir, .menu-cerrar {
@@ -393,7 +406,13 @@ fieldset {
         padding: 3%;
         margin: auto;
     }
-    
+    /* pag acceso */
+    #acceso {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
      /*Pag menu*/
      .container-card {
         display: grid;
@@ -468,7 +487,9 @@ fieldset {
     }
     
     /* page Acceso Formulario para ingreso del cliente */
-
+    #mainAcceso {
+        padding: 2%;
+    }
     fieldset {
         width: 60%; 
         padding: 5%;   
