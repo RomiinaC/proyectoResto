@@ -188,8 +188,8 @@ form p {
     padding: 8%;
 }
 .tarjeta:hover {
-    transform: scale(1.2,1.2);
-    box-shadow: 6px 6px 20px 10px rgba(11, 210, 224, 0.5);
+    transform: scale(1.1,1.1);
+    box-shadow: 5px 5px 15px 10px #4e2c1ca2;
 }
 /* --------------- Pag bodega*/
 .imgBodega img {
