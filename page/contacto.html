@@ -16,7 +16,7 @@
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
             <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></button>
-            <button id="cerrarSesion" onclick="cerrarSesion()"><i class='bx bx-log-out'></i></button>
+            <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
             <nav class="navbar visible" id="navbar">
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
@@ -37,15 +37,14 @@
                 <div class="containerCarrusel" id="containerCarrusel">
                     <img src="../image/plate-with-different-types-kebab.jpg" alt="" class="imgCarrusel">
                 </div>
-                <button id="adelanteCarrusel">></button>
-            </div>    
+                <button id="adelanteCarrusel">></button>    
         </div> 
         <section class="contacto" id="contactoForm">
             <h1>CONTACTO</h1>
             <div>
                 <form action="">
                     <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="text" id="userName" name="userName">
+                    <input type="text" id="userName" name="userName" >
                     <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
                     <input type="text" id="userLastName" name="userLastName">
                     <label for="email">Email <abbr title="required" aria-label="required"> * </abbr></label>

@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-
 </head>
 <body>
     <header class="header">
         <a href="index.html"><img src="image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
             <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></button>
-            <button id="cerrarSesion" onclick="cerrarSesion()"><i class='bx bx-log-out'></i></button>
+            <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
             <nav class="navbar" id="navbar">
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
@@ -39,11 +38,10 @@
         <section class="intro" name="home">
             <h1>Perugia Restaurante</h1>
             <div class="presentacion">
-                <p>En Perugia, los invitamos a experimentar los sabores únicos de la cocina porteña en un entorno sofisticado.
-                    Nuestros chefs reconocidos internacionalmente crean sus obras maestras culinarias solo con los mejores ingredientes, ofreciendo un menu con una selección de platos tradicionales con un toque contemporáneo, garantizando una experiencia gastronómica memorable.
-                    Nuestro staff de servicio excepcional garantiza que cada aspecto de su experiencia culinaria sea perfecto
-                </p>
+                <p>En Perugia, los invitamos a experimentar los sabores únicos de la cocina porteña en un entorno sofisticado.</p>
                 <img src="image/chef_internacional.jpg" alt="chef sosteniendo una de sus creaciones">
+                <p> Nuestros chefs reconocidos internacionalmente crean sus obras maestras culinarias solo con los mejores ingredientes, ofreciendo un menu con una selección de platos tradicionales con un toque contemporáneo, garantizando una experiencia gastronómica memorable.</p>
+                <p>Nuestro staff de servicio excepcional garantiza que cada aspecto de su experiencia culinaria sea perfecto</p>  
             </div>
         </section>
         <section class="enlaces">
@@ -72,7 +70,17 @@
             </ul>
         </section>
         <section>  
-            
+            <h2>Galeria</h2>
+            <div id="container-galery">
+                <img src="image/galery/brindis.jpg" alt="brindis">
+                <img src="image/galery/seafood-dish.jpg" alt="plato" class="invisible visible2part">
+                <img src="image/galery/salad.jpg" alt="ensalada" class="invisible visible1part" >
+                <img src="image/galery/coccion-carne.jpg" alt="pieza de carne roja a punto medio" class="invisible visible2part">
+                <img src="image/galery/cocktail.jpg" alt="cocktail de naranja y menta" class="invisible visible1part">
+                <img src="image/galery/barra.jpg" alt="sector barra">
+                <img src="image/galery/salon-exterior.jpg" alt="sector exteriores">
+                <img src="image/galery/salon2.jpg" alt="sector mesas para cuatro">
+            </div>
         </section>
     </main>
     <footer class="footer container">

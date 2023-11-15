@@ -4,19 +4,16 @@ const adelante = document.getElementById("adelanteCarrusel")
 const foto = document.querySelector(".imgCarrusel")
 
 const fotosCarrusel = ["../image/Perugia-banner(2).png","../image/good-wine.jpg", "../image/chefs-cooking.jpg"]
-let posicionActual = 0;
-
+let posicionActual = 0
 
 function pasarFoto() {
     if(posicionActual >= fotosCarrusel.length - 1) {
         posicionActual = 0;
     } else {
         posicionActual++;
-    }
-    
+    }   
     renderizarImagen();
 }
-
 
 function retrocederFoto() {
     if(posicionActual <= 0) {
@@ -26,8 +23,6 @@ function retrocederFoto() {
     }
     renderizarImagen();
 }
-
-
 
 function renderizarImagen () {
     foto.src = fotosCarrusel[posicionActual];

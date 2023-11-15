@@ -16,7 +16,7 @@
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
             <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></button>
-            <button id="cerrarSesion" onclick="cerrarSesion()"><i class='bx bx-log-out'></i></button>
+            <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
             <nav class="navbar visible" id="navbar">
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
@@ -32,38 +32,43 @@
         </div>    
     </header>
     <main id="mainAcceso">
+        <div id="acceso" name="acceso">
+            <h2>Ingresa</h2>
+            <fieldset>
+                <form action="" id="formAcceso" name="formAcceso">
+                    <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="email" name="userId" id="userId" class="userId" autofocus required onchange="validarEntrada(this)">
+                    <label for="password">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="password" name="password" id="password" class="password" required onchange="validarPass(this)">
+                    <input type="submit" value="Iniciar Sesion" class="btn" id="btnEnviar" onclick="handlerValidarIngreso()">
+                </form>
+            </fieldset>
+            <h2>Registrate</h2>
+            <fieldset>
+                <form action="" id="formNewUser" name="formNewUser" >
+                    <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="text" id="userName" name="userName" required>
+                    <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="text" id="userLastName" name="userLastName" required>
+                    <label for="tel">Telefono</label>
+                    <input type="tel" name="tel" id="tel">
+                    <label for="userIdNew">Direccion de correo electronico <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="email" id="userIdNew" name="userIdNew" required>
+                    <input type="submit" value="Registrate" class="btn" onclick="handlerValidarIngreso">
+                    <p>Te llegara un email de confirmacion a tu casilla de correo electronico.</p>
+                </form>
+            </fieldset>
+        </div>
         <div id="bienvenidaUser">
             <h1 id="bienvenidaAcceso">Bienvenido a Perugia Restaurante!</h1>
+            <p>Nos enorgullece ser el destino preferido para aquellos que buscan una experiencia gastronómica única en Buenos Aires. Esperamos tener el placer de servirles pronto y superar sus expectativas.
+            </p>
+            <div class="linksEnlaces">
+                <a href="reserva.html" class="boton">Reserva</a>
+                <a href="menu.html" class="boton">Carta Menu</a>
+                <a href="bodega.html" class="boton">Carta Vinos</a>
+            </div>   
         </div>
-        
-        <div id="acceso">
-            <h2>Ingresa</h2>
-        <fieldset>
-            <form action="" id="formAcceso">
-                <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
-                <input type="email" name="userId" id="userId" class="userId" autofocus>
-                <label for="passw">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
-                <input type="password" name="passw" id="passw" class="password" required>
-                <input type="submit" value="Iniciar Sesion" class="btn" onclick="handlerValidarIngreso()">
-            </form>
-        </fieldset>
-        <h2>Registrate</h2>
-        <fieldset>
-            <form action="" id="formUserNew">
-                <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
-                <input type="text" id="userName" name="userName" required>
-                <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
-                <input type="text" id="userLastName" name="userLastName" required>
-                <label for="tel">Telefono</label>
-                <input type="tel" name="tel" id="tel">
-                <label for="userIdNew">Direccion de correo electronico <abbr title="required" aria-label="required"> * </abbr></label>
-                <input type="email" id="userIdNew" name="userIdNew" required>
-                <input type="button" value="Registrate" class="btn">
-                <p>Te llegara un email de confirmacion a tu casilla de correo electronico.</p>
-            </form>
-        </fieldset>
-        </div>
-        
     </main>
     <footer class="footer container">
         <div class="footContacto">

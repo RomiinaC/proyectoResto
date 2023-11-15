@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon-16x16.png">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style_acceso.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -17,7 +16,7 @@
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
             <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></button>
-            <button id="cerrarSesion" onclick="cerrarSesion()"><i class='bx bx-log-out'></i></button>
+            <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
             <nav class="navbar visible" id="navbar">
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
@@ -33,29 +32,32 @@
         </div>    
     </header>
     <main id="mainNosotros" class="container">
-        <h1 class="titular">Perugia Restaurante</h1>
+        <h1 class="titular">Conocenos</h1>
         <div class="info">
-            <p>Nos encontamos ubicados en el corazón de Buenos Aires, donde la calidad y calidez se funden para vivir un momento diferente.</p>
-            
+            <p>Nos encontamos ubicados en el corazón de Buenos Aires, donde la calidad y calidez se funden para vivir un momento diferente.</p> 
             <p> Siempre ofreciendo un ambiente confortable y una experiencia culinaria de primera clase, mientras disfrutas de la vista a un sereno patio porteño y un tradicional jardín.</p>
+            <img src="../image/galery/salon-exterior.jpg" alt="salon exteriores">
         </div>
-        <img src="../image/chefs-cooking.jpg" alt="grupo de chef cocinando"  class="img-personal">
-        
         <div class="info">
             <p> En Perugia, nuestro objetivo es superar las expectativas de nuestros comensales en cada visita.</p>
+            <img src="../image/chefs-cooking.jpg" alt="grupo de chef cocinando"  class="img-personal">
             <p> Consideramos que la atención al cliente es una parte fundamental de la experiencia gastronómica.</p>
+            <img src="../image/staff_of_waitress_and_waiters (1).jpg" alt="staff de servicio"  class="img-personal">  
             <p> Nuestro equipo de mozos es el alma de nuestra excelencia, y su compromiso, educación y la atención al detalle es insuperable. Son verdaderos profesionales con una profunda comprensión de la cocina, los vinos y los cócteles que ofrecemos. </p>
         </div>
-        <img src="../image/staff_of_waitress_and_waiters (1).jpg" alt="staff de servicio"  class="img-personal">    
+          
          <div>
+            <img src="../image/staff_of_waitress_and_waiters (2).jpg" alt="staff de mozos" class="img-personal">
             <p>Cada miembro de nuestro equipo de mozos se esfuerza por crear un ambiente acogedor y personalizado para cada comensal. </p>
             <p> Nuestro objetivo es superar las expectativas de nuestros comensales en cada visita.</p>
-         </div>   
-        <img src="../image/staff_of_waitress_and_waiters (2).jpg" alt="staff de mozos" class="img-personal">
-        <div class="info">
             
+         </div>   
+        
+        <div class="info">
+            <img src="../image/galery/brindis.jpg" alt="">
             <p>¿Está planeando una celebración especial o una cena de negocios? En Perugia, ofrecemos opciones para eventos privados que harán que su ocasión sea memorable. Lo mejor en almuerzos ejecutivos, cenas familiares y otros eventos.</p>
-            <p>Manténgase conectado mientras disfruta de una comida excepcional. Ofrecemos acceso gratuito a Internet de alta velocidad.</p>
+            <img src="../image/staff/_c06dcd82-1745-45a2-b225-fdb9cd55cd3e.jfif" alt="">
+            <p><i class='bx bx-wifi' style='color:#048efb'  ></i> Ademas le ofrecemos acceso gratuito a Internet de alta velocidad.Manténgase conectado mientras disfruta de una comida excepcional.</p>
             <p> Gracias por elegir Perugia. Estamos ansiosos por darle la bienvenida y hacer que su experiencia gastronómica sea excepcional.</p>
         </div>
    

@@ -98,9 +98,7 @@ a {
     background-color: transparent;
     border: none;
 }
-#cerrarSesion {
-    display: none;
-}
+
 #menu-cerrar {
     font-weight: bold;
     border: none;
@@ -114,6 +112,13 @@ a {
 .visible {
     visibility: visible;
     opacity: 1;
+}
+.oculto {
+    display: none;
+}
+.inputNoValido {
+    border: 1px solid #ff0000;
+    box-shadow: 0 0 3px 1px #ff0000;  ;
 }
 /* MAIN */
 
@@ -131,7 +136,6 @@ main img {
 }
 /* Horarios de apertura */
 .info ul li {
-    padding-top: 2%;
     list-style-type: circle;
 }
 /* enlaces a menu, bodega y reserva*/
@@ -149,6 +153,15 @@ main img {
     margin-bottom: 3%;
     border: inset;
 }
+/* galeria*/
+.invisible {
+    display: none;
+}
+#container-galery img {
+    border-radius: 0px 25px;
+}
+
+
 /* ------Pag Acceso Formulario para ingreso del cliente */
 #mainAcceso {
     padding: 10% 15%;
@@ -156,9 +169,10 @@ main img {
 #mainAcceso h1, #mainAcceso h2{
     margin-bottom: 10%;
 }
-#bienvenidaAcceso {
+#bienvenidaUser {
     display: none;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -176,6 +190,12 @@ fieldset {
 form p {
     margin: 3%;
 }
+.linksEnlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    margin-top: 10%;
+}
 
 /*----------- Pag menu*/
 
@@ -189,7 +209,7 @@ form p {
 }
 .tarjeta:hover {
     transform: scale(1.1,1.1);
-    box-shadow: 5px 5px 15px 10px #4e2c1ca2;
+    box-shadow: 5px 5px 15px 10px #4e2c1cd5;
 }
 /* --------------- Pag bodega*/
 .imgBodega img {
@@ -213,7 +233,7 @@ form p {
     width: 40%;
 
 }
-#formInfoReserva {
+#mainReserva #bienvenidaReserva {
     display: none;
 }
 .botonera {
@@ -337,11 +357,17 @@ fieldset {
     width: 80%; 
     padding: 5%;   
 }
-
+.linksEnlaces {
+    padding: 0% 15%;
+}
 /* pag nosotros */
 .contacto .iframe iframe {
     height: 50vh;
 }
+}
+#container-galery img {
+    width: 70%;
+    margin: 5% 15%;
 }
 /* pag contacto */
 #contactoForm {
@@ -397,14 +423,18 @@ fieldset {
         text-decoration: none;
         color: #000;
     }
-    .presentacion {
-        display: flex;
-        gap: 8%;
-    }
     .presentacion img {
-        width: 50%;
-        padding: 3%;
-        margin: auto;
+        width: 40%;
+        padding: 2%;
+        float: right;
+    }
+    #container-galery {
+        display: flex;
+        flex-wrap: wrap;   
+    }
+    #container-galery img {
+        width: 40%;
+        margin: 5%;
     }
     /* pag acceso */
     #acceso {
@@ -412,6 +442,11 @@ fieldset {
         flex-direction: column;
         align-items: center;
         width: 80%;
+    }
+    .linksEnlaces {
+        flex-direction: row;
+        gap: 5%;
+        padding: 2%;
     }
      /*Pag menu*/
      .container-card {
@@ -467,6 +502,9 @@ fieldset {
 
 
 @media screen and (min-width:900px) {
+    * {
+        font-size: 1.2rem;
+    }
     .presentacion {
         gap: 2%;
     }
@@ -485,10 +523,19 @@ fieldset {
         gap: 8%;
         
     }
-    
+    #container-galery {
+        justify-content: center;
+    }
+    #container-galery img {
+        width: 25%;
+        margin: 3%;
+    }
+    .visible1part {
+        display: inline;
+    }
     /* page Acceso Formulario para ingreso del cliente */
     #mainAcceso {
-        padding: 2%;
+        padding: 5% 12%;
     }
     fieldset {
         width: 60%; 
@@ -545,17 +592,14 @@ fieldset {
         padding: 1% 6%;
     }
     h1, h2, h3, h4 , h5 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin: 0;
     }
     .presentacion img {
-        width: 30%;
+        width: 50%;
     }
     .presentacion p {
         padding: 1%;
-    }
-    .enlaces div {
-        height: 90vh;
     }
     .info li {
     margin: 2%;
@@ -569,6 +613,16 @@ fieldset {
     .contacto .iframe iframe {
         width: 90%;
         height: 80vh;
+    }
+    #container-galery {
+        justify-content: center;
+    }
+    #container-galery img {
+        width: 20%;
+        margin: 2%;
+    }
+    .visible2part {
+        display: inline;
     }
     /*pag menu*/
     .container-card {
