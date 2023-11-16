@@ -5,14 +5,8 @@ const acceso = document.getElementById("acceso")
 const bienvenida = document.getElementById("bienvenidaUser")
 const formAcceso = document.getElementById("formAcceso")
 
-// const bienvenidaR = document.getElementById("bienvenidaReserva")
-// const formAccesoR = document.getElementById("formReserva")
-// const formReserva = document.getElementById("formInfoReserva")
-
-
 const btnEnviar = document.getElementById("btnEnviar")
-const btnCerrar = document.getElementById("cerrarSesion")
-
+// const btnCerrar = document.getElementById("cerrarSesion")
 
 let userRegistrado = false
 let userLogueado = false
@@ -39,11 +33,10 @@ function validarPass(input) {
         
     }}
 
-
 function handlerValidarIngreso() {  
     
-let userOk = validarEntrada(inputUserId)
-let passOk = validarPass(inputPassw)
+    let userOk = validarEntrada(inputUserId)
+    let passOk = validarPass(inputPassw)
     
     if ( userOk && passOk ) {
         localStorage.setItem("userRegistrado", true)
@@ -59,21 +52,21 @@ let passOk = validarPass(inputPassw)
 //     return asd
 // }
 
-function handlerCerrarSesion() {
+// function handlerCerrarSesion() {
     
-    localStorage.removeItem("userRegistrado")
-    formAcceso.reset()
+//     localStorage.removeItem("userRegistrado")
+//     formAcceso.reset()
     
-    btnCerrar.className = "oculto"
+//     btnCerrar.className = "oculto"
     
-    window.location.href = "../index.html"
-    return false
+//     window.location.href = "../index.html"
+//     return false
 
-  }
+// }
 
 function mostrar(elemento, flag) {
     if ( elemento !== null && elemento !== undefined){
-        elemento.style.display = flag ? "block" : "none"
+        elemento.style.display = flag ? "block" : "none" 
     }
     
 }
@@ -99,45 +92,6 @@ if (userLogueado ) {
      } else {
          mostrar(acceso, true)
          mostrar(bienvenida , false)
-// //     mostrar(form, true)
-     
   }
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function mostrar(elemento, flag) {
-//     if ( elemento !== null && elemento !== undefined){
-//         elemento.style.display = flag ? "block" : "none"
-//     }
-// }
-
+  
