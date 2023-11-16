@@ -172,7 +172,6 @@ main img {
 #bienvenidaUser {
     display: none;
 }
-
 form {
     display: flex;
     flex-direction: column;
@@ -190,7 +189,6 @@ fieldset {
 form p {
     margin: 3%;
 }
-
 
 /*----------- Pag menu*/
 
@@ -219,6 +217,19 @@ form p {
 /* -------------- pag reservas*/
 #mainReserva {
     padding: 0% 10%;
+    background-image: url("../image/PERUGIA-bg.png");
+    height: 100vh;
+}
+#mainReserva #Reserva{
+    padding: 8% 8%;
+    height: 90vh;
+    background-color: #ffffff77;
+}
+#btnRedireccion {
+    padding: 10% 5%;
+    display: flex;
+    gap: 5%;
+    flex-direction: column;
 }
 #formReserva {
     display: flex;
@@ -373,6 +384,9 @@ fieldset {
 /*pag reserva*/
 #mainReserva {
     padding: 0% 15%;
+}
+#btnRedireccion {
+    flex-direction: row;
 }
 }
 /* mquery para tablets de 10 */
