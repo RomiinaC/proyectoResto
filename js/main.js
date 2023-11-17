@@ -2,6 +2,11 @@ const nav = document.getElementById("navbar")
 const abrir = document.getElementById("menu-abrir")
 const cerrar = document.getElementById("menu-cerrar")
 const btnCerrar = document.getElementById("cerrarSesion")
+const inputUserId = document.getElementById("userId")
+const inputPassw = document.getElementById("password")
+
+let userRegistrado = false
+let userLogueado = false
 
 abrir.addEventListener("click",()=> {
     nav.classList.add("visible")

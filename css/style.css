@@ -176,7 +176,6 @@ form {
     display: flex;
     flex-direction: column;
     padding: 5%;
-    margin-bottom: 15%;
 }
 form input, form .btn, form select {
     margin: 8% 0%;
@@ -218,7 +217,7 @@ form p {
 #mainReserva {
     padding: 0% 10%;
     background-image: url("../image/PERUGIA-bg.png");
-    height: 100vh;
+
 }
 #mainReserva #Reserva{
     padding: 8% 8%;

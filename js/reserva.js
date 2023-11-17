@@ -1,3 +1,21 @@
+const reserva = document.getElementById("Reserva")
+const bienvenidaReserva = document.getElementById("bienvenidaReserva")
+
+
+
+
+if (userLogueado ) {
+    btnCerrar.className = "visible"
+    mostrar(bienvenidaReserva , true)
+    mostrar(reserva, false)
+    } else {
+         mostrar(reserva, true)
+         mostrar(bienvenidaReserva , false)
+}
+
+
+
+
 function fecha24hspost() {
     const dateMin = new Date();
 
