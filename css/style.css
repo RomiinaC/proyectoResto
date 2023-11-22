@@ -219,9 +219,8 @@ form p {
     background-image: url("../image/PERUGIA-bg.png");
 
 }
-#mainReserva #Reserva{
-    padding: 8% 8%;
-    height: 90vh;
+#mainReserva #Reserva, #mainReserva #bienvenidaReserva{
+    padding: 10% 10%;
     background-color: #ffffff77;
 }
 #btnRedireccion {
@@ -234,8 +233,9 @@ form p {
     display: flex;
     flex-direction: column;
 }
-#formInfoReserva .btn {
-    width: 40%;
+#formInfoReserva input {
+    padding: 5%;
+    height: auto;
 }
 #mainReserva #bienvenidaReserva {
     display: none;
@@ -244,28 +244,38 @@ form p {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    gap: 20%;
+    padding: 10%;
 }
-.botonera button , .botonera input{
+.botonera input{
     text-align: center;
     cursor: pointer;
-   
+    height: 100%;
+    padding:5%;
+    font-weight: bold;
+    font-size: larger;
+    border-color: #4e2c1c;
+    border-radius: 5px;
 }
 #fechaDisponible {
     display: flex;
     flex-direction: column;
 }
-.listaHorario {
+#listaHorario {
     display: flex;
     gap: 2%;
     justify-content: space-between;
 }
-.listaHorario .turno {
+.turno {
     width: 40%;
+    font-weight: bold;
+    background-color: #d8ccbad7;
+    border-radius: 15px;
 }
 .hora {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 /* ---------------------  pag Nosotros */
 
@@ -347,7 +357,7 @@ form p {
         padding: 2%;
     }
 /* page Acceso Formulario para ingreso del cliente */
-#mainAcceso {
+#mainAcceso div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -448,12 +458,7 @@ fieldset {
         margin: 5%;
     }
     /* pag acceso */
-    #acceso {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-    }
+
     .linksEnlaces {
         flex-direction: row;
         gap: 5%;
@@ -528,7 +533,7 @@ fieldset {
 
 @media screen and (min-width:900px) {
     * {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .presentacion {
         gap: 2%;
@@ -569,6 +574,7 @@ fieldset {
     #bienvenidaUser .enlaces {
         min-height: auto;
         align-items: center;
+        flex-direction: row;
     }
      /* pag reserva */
     #formReserva {

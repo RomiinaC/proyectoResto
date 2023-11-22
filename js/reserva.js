@@ -1,9 +1,6 @@
 const reserva = document.getElementById("Reserva")
 const bienvenidaReserva = document.getElementById("bienvenidaReserva")
 
-
-
-
 if (userLogueado ) {
     btnCerrar.className = "visible"
     mostrar(bienvenidaReserva , true)
@@ -12,9 +9,6 @@ if (userLogueado ) {
          mostrar(reserva, true)
          mostrar(bienvenidaReserva , false)
 }
-
-
-
 
 function fecha24hspost() {
     const dateMin = new Date();
@@ -41,18 +35,56 @@ fechaDisp.appendChild(inputDate)
 
 // Funcionalidad de la botonera
 
-// const num = document.getElementById("cantComensales")
-// const botonMenos = document.querySelector(".menos")
-// const botonMas = document.querySelector(".mas")
+const num = document.getElementById("cantComensales")
+const botonMayor = document.getElementById("btnMayor")
+const botonMenor = document.getElementById("btnMenor")
 
-// botonMenos.addEventListener("click", function() {
-//     if (num.value > num.min) {
-//         num.value--
-//     }
-// }) 
-// botonMas.addEventListener("click", function() {
-//     if (num.value < num.max) {
-//         num.value++
-//     }
-// }) 
+botonMenor.addEventListener("click", function(e) {
+    e.preventDefault()
+    if (num.valueAsNumber > parseInt(num.min)) {
+        num.valueAsNumber--
+     }
+}) 
+botonMayor.addEventListener("click", function(e) {
+    e.preventDefault()
+    if (num.valueAsNumber < parseInt(num.max)) {
+        num.valueAsNumber++
+   }
+}) 
 
+const horarios = document.getElementById("listaHorario")
+
+function agregarHorarios(turno, horaInicio, horaFin, intervalo) {
+    let contenedor = document.createElement("div")
+    let titulo = document.createElement("h4")
+    titulo.textContent += turno
+    contenedor.appendChild(titulo)
+    contenedor.classList.add("turno")
+
+    for (let hora = horaInicio; hora <= horaFin; hora++) {
+        for (var minuto = 0; minuto < 60; minuto += intervalo) {
+            const time = `${hora.toString().padStart(2, '0')}:${minuto.toString().padStart(2, '0')}`
+            
+            let divHora = document.createElement("div")
+            divHora.classList.add("hora")
+
+            let label = document.createElement("label")
+            label.setAttribute("for", time)
+            label.textContent = time
+
+            let input = document.createElement("input")
+            input.setAttribute("type", "radio")
+            input.setAttribute("name", "horario")
+            input.setAttribute("value", time)
+            input.setAttribute("id", time)
+
+            divHora.appendChild(label)
+            divHora.appendChild(input)
+            contenedor.appendChild(divHora)
+            horarios.appendChild(contenedor)
+        }
+    }
+}
+
+agregarHorarios("Mañana", 12, 15, 30)
+agregarHorarios("Noche", 20, 23, 30)

@@ -34,11 +34,7 @@ function handlerValidarIngreso() {
     return userRegistrado
 }
 
-function mostrar(elemento, flag) {
-    if ( elemento !== null && elemento !== undefined){
-        elemento.style.display = flag ? "block" : "none" 
-    }    
-}
+
 
 // userRegistrado = handlerValidarIngreso();
 userLogueado = validarLogin();

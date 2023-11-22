@@ -33,3 +33,8 @@ function handlerCerrarSesion() {
      window.location.href = "../index.html"
      return false
 }
+ function mostrar(elemento, flag) {
+    if ( elemento !== null && elemento !== undefined){
+        elemento.style.display = flag ? "block" : "none" 
+    }    
+}

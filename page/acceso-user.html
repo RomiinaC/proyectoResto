@@ -34,34 +34,39 @@
     <main id="mainAcceso">
         <div id="acceso" name="acceso">
             <h2>Ingresa</h2>
-            <fieldset>
-                <form action="" id="formAcceso" name="formAcceso">
-                    <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="email" name="userId" id="userId" class="userId" autofocus required onchange="validarEntrada(this)">
-                    <label for="password">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="password" name="password" id="password" class="password" required onchange="validarPass(this)">
-                    <input type="submit" value="Iniciar Sesion" class="btn" id="btnEnviar" onclick="handlerValidarIngreso()">
-                </form>
-            </fieldset>
+            <div>
+                <fieldset>
+                    <form action="" id="formAcceso" name="formAcceso">
+                        <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
+                        <input type="email" name="userId" id="userId" class="userId" autofocus required onchange="validarEntrada(this)">
+                        <label for="password">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
+                        <input type="password" name="password" id="password" class="password" required onchange="validarPass(this)">
+                        <input type="submit" value="Iniciar Sesion" class="btn" id="btnEnviar" onclick="handlerValidarIngreso()">
+                    </form>
+                </fieldset>
+            </div>
             <h2>Registrate</h2>
-            <fieldset>
-                <form action="" id="formNewUser" name="formNewUser" >
-                    <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="text" id="userName" name="userName" required>
-                    <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="text" id="userLastName" name="userLastName" required>
-                    <label for="userIdNew">Direccion de correo electronico <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="email" id="userIdNew" name="userIdNew" required>
-                    <label for="fechaNac">Fecha de nacimiento</label>
-                    <input type="date" id="fechaNac" name="fechaNac" required>
-                    <label for="tel">Telefono</label>
-                    <input type="tel" name="tel" id="tel">
-                    <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" id="direccion">
-                    <input type="submit" value="Registrate" class="btn">
-                    <p>Te llegara un email de confirmacion a tu casilla de correo electronico.</p>
-                </form>
-            </fieldset>
+            <div>
+                <fieldset>
+                    <form action="" id="formNewUser" name="formNewUser" >
+                        <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
+                        <input type="text" id="userName" name="userName" required>
+                        <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
+                        <input type="text" id="userLastName" name="userLastName" required>
+                        <label for="userIdNew">Direccion de correo electronico <abbr title="required" aria-label="required"> * </abbr></label>
+                        <input type="email" id="userIdNew" name="userIdNew" required>
+                        <label for="fechaNac">Fecha de nacimiento</label>
+                        <input type="date" id="fechaNac" name="fechaNac" required>
+                        <label for="tel">Telefono</label>
+                        <input type="tel" name="tel" id="tel">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
+                        <input type="submit" value="Registrate" class="btn">
+                        <p>Te llegara un email de confirmacion a tu casilla de correo electronico.</p>
+                    </form>
+                </fieldset>
+            </div>
+  
         </div>
         <div id="bienvenidaUser">
             <h1 id="bienvenidaAcceso">Bienvenido a Perugia Restaurante!</h1>
@@ -90,7 +95,7 @@
                 <li><i class='bx bx-world'></i> www.perugiaresto.com</li>
                 <li><i class='bx bxs-phone'></i> 4112233</li>
                 <li><i class='bx bxl-whatsapp' ></i><a href="https://api.whatsapp.com/"> 011 15333787</a></li>
-                <li><i class='bx bxl-gmail'></i><a href="mailto:perugiaresto@gmail.com?=contactoWeb"></a> perugiaresto@gmail.com</li>
+                <li><i class='bx bxl-gmail'></i><a href="mailto:perugiaresto@gmail.com?=contactoWeb"> perugiaresto@gmail.com</a></li>
                 <li><i class='bx bxl-facebook-circle' ></i><a href="https://www.facebook.com/"> Perugia Restaurant</a></li>
                 <li><i class='bx bxl-instagram' ></i><a href="https://www.instagram.com/"> Perugia Restaurant</a></li>
             </ul>
