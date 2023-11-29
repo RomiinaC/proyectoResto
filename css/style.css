@@ -152,6 +152,7 @@ main img {
     padding: 5%;
     margin-bottom: 3%;
     border: inset;
+    border-radius: 15px;
 }
 /* galeria*/
 .invisible {
@@ -171,6 +172,9 @@ main img {
 }
 #bienvenidaUser {
     display: none;
+}
+#container-forms {
+    display: flex;
 }
 form {
     display: flex;
@@ -217,11 +221,11 @@ form p {
 #mainReserva {
     padding: 0% 10%;
     background-image: url("../image/PERUGIA-bg.png");
-
+    color: #fff;
 }
 #mainReserva #Reserva, #mainReserva #bienvenidaReserva{
     padding: 10% 10%;
-    background-color: #ffffff77;
+    background-color: #ffffff3f;
 }
 #btnRedireccion {
     padding: 10% 5%;
