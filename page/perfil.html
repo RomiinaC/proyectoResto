@@ -10,7 +10,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon-16x16.png">
     <link rel="stylesheet" href="../css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
 </head>
 <body>
     <header class="header">
@@ -25,7 +24,7 @@
                         <a href="acceso-user.html#formNewUser">Registrate</a>
                     </div>
                     <div id="link-perfil" class="oculto">
-                        <a href="perfil.html">Perfil</a>
+                        <a href="">Perfil</a>
                     </div>                    
                     <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
                 </div>
@@ -41,24 +40,10 @@
                 </ul>
                 <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
             </nav>
-        </div> 
+        </div>    
     </header>
     <main>
-        <h1>Bodega</h1>
-        <section class="container-card" id="contenedorBodega">
-            <div v-for="vino in bodega" class="tarjeta" id="tarjetaBodega">
-                <div class="imgBodega">
-                    <img :src="`../image/bodega/${vino.foto}`" :alt="vino.nombre" >
-                </div>
-                <div>
-                    <h2>{{vino.nombre}}</h2>
-                    <h3>{{vino.bodega}}</h3>
-                </div>
-                <div>
-                    <p class="textDestacado">{{vino.textura}}</p>
-                </div>
-            </div>   
-        </section >
+        <h1>hello</h1>
     </main>
     <footer class="footer container">
         <div class="footContacto">
@@ -91,10 +76,8 @@
                 <li>Grupo alumnos FullStack Python CAC</li>
             </ul>
         </div>
-    </footer>
-    <script src="https://unpkg.com/vue@next/dist/vue.global.js"></script>
-    <script src="../js/dataBodegaJSON.js"></script>
-    <script src="../js/dataBodega.js"></script>
+    </footer>   
     <script src="../js/main.js"></script>
+    <script src="../js/dataUser.js"></script>
 </body>
 </html>

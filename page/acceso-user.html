@@ -15,19 +15,30 @@
     <header class="header">
         <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
-            <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></button>
-            <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
-            <nav class="navbar visible" id="navbar">
-                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
+            <button class="menu-abrir" id="menu-abrir"><i class='bx bx-menu bx-sm'></i></button>
+            <div class="dropdown">
+                <button id="menu-user"><i class='bx bxs-user bx-sm '></i></button>
+                <div class="dropdown-content">
+                    <div id="links-access">
+                        <a href="acceso-user.html">Acceder</a>
+                        <a href="acceso-user.html#formNewUser">Registrate</a>
+                    </div>
+                    <div id="link-perfil" class="oculto">
+                        <a href="perfil.html">Perfil</a>
+                    </div>                    
+                    <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
+                </div>
+            </div>
+            <nav class="navbar" id="navbar">  
                 <ul class="nav-items">
                     <li><a href="../index.html#home">HOME</a></li>
-                    <li><a href="acceso-user.html">ACCEDER</a></li>
                     <li><a href="menu.html">MENU</a></li>
                     <li><a href="bodega.html">BODEGA</a></li>
                     <li><a href="reserva.html">RESERVAS</a></li>
                     <li><a href="nosotros.html">NOSOTROS</a></li>
                     <li><a href="contacto.html">CONTACTO</a></li>
                 </ul>
+                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
             </nav>
         </div>    
     </header>
@@ -69,6 +80,9 @@
   
         </div>
         <div id="bienvenidaUser">
+            <div id="container-perfil">
+
+            </div>
             <h1 id="bienvenidaAcceso">Bienvenido a Perugia Restaurante!</h1>
             <p>Nos enorgullece ser el destino preferido para aquellos que buscan una experiencia gastronómica única en Buenos Aires. Esperamos tener el placer de servirles pronto y superar sus expectativas.
             </p>
@@ -120,6 +134,7 @@
             </ul>
         </div>
     </footer>
+    
     <script src="../js/main.js"></script>
     <script src="../js/dataUser.js"></script>
 </body>

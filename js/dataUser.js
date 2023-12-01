@@ -3,12 +3,7 @@ const acceso = document.getElementById("acceso")
 const bienvenida = document.getElementById("bienvenidaUser")
 const formAcceso = document.getElementById("formAcceso")
 
-const userName = document.getElementById("userName")
-const userLastName = document.getElementById("userLastName")
-const passNewUser = document.getElementById("passwordUserNew")
-
 const btnEnviar = document.getElementById("btnEnviar")
-
 
 // Función de validación de dirección de correo electrónico
 function validarEntrada(input) {
@@ -46,7 +41,7 @@ async function handlerValidarIngreso() {
     
     if ( userOk && passOk ) {
         try {
-            const response = await fetch(`http://127.0.0.1:5000/login/${userId}/${userPassw}`)
+            const response = await fetch(`http://127.0.0.1:5000/api/login/${userId}/${userPassw}`)
             const data = await response.json()
             if (data.datos) {
                 localStorage.setItem("userRegistrado", true)
@@ -57,6 +52,7 @@ async function handlerValidarIngreso() {
     }}
     return userRegistrado
 }
+
 
 function completeField(input) {
     let campo = input.value.trim()
@@ -69,10 +65,24 @@ function completeField(input) {
    
 
 // userRegistrado = handlerValidarIngreso();
-userLogueado = validarLogin();
+userLogueado = validarLogin()
+
+// async function getPerfil() {  
+//     let userId = inputUserId.value    
+//         try {
+//             const response = await fetch(`http://127.0.0.1:5000/api/login/perfil/${userId}`)
+//             const data = await response.json()
+//              return data
+//         } catch (error) {
+//             console.error('Error al obtener perfil:', error)
+//     }  
+// }
 
 if (userLogueado ) {
     btnCerrar.className = "visible"
+    perfil.className = "visible"
+    linksAcceso.className ="oculto"
+
     mostrar(bienvenida , true)
     mostrar(acceso, false)
     } else {
@@ -94,19 +104,21 @@ function enviarFormulario(event) {
     }
 
     // Enviar datos al servidor en formato JSON
-    fetch('http://127.0.0.1:5000/page/acceso-user', {
+    fetch(`http://127.0.0.1:5000/api/login/new-user`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
-    .then(data => {
-        window.location.href = "../index.html"
+    .then(response => {
+        if (response.ok) {
+             window.location.href = "../index.html"
+        }    
     })
     .catch(error => {
         console.error('Error al enviar datos:', error)
     });
 }
+
 

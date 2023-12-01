@@ -10,26 +10,35 @@
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 <body>
     <header class="header">
         <a href="index.html"><img src="image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
         <div class="user-nav">
-            <button class="menu-abrir" id="menu-abrir"><i class='bx bxs-user bx-sm '></i></button>
-            <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
+            <button class="menu-abrir" id="menu-abrir"><i class='bx bx-menu bx-sm'></i></button>
+            <div class="dropdown">
+                <button id="menu-user"><i class='bx bxs-user bx-sm '></i></button>
+                <div class="dropdown-content">
+                    <div id="links-access">
+                        <a href="page/acceso-user.html">Acceder</a>
+                        <a href="page/acceso-user.html#formNewUser">Registrate</a>
+                    </div>
+                    <div id="link-perfil" class="oculto">
+                        <a href="page/perfil.html">Perfil</a>
+                    </div>                    
+                    <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
+                </div>
+            </div>
             <nav class="navbar" id="navbar">
-                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
                 <ul class="nav-items">
                     <li><a href="index.html#home">HOME</a></li>
-                    <li><a href="page/acceso-user.html">ACCEDER</a></li>
                     <li><a href="page/menu.html">MENU</a></li>
                     <li><a href="page/bodega.html">BODEGA</a></li>
                     <li><a href="page/reserva.html">RESERVAS</a></li>
                     <li><a href="page/nosotros.html">NOSOTROS</a></li>
                     <li><a href="page/contacto.html">CONTACTO</a></li>
                 </ul>
-                
+                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x-circle bx-sm'></i>CERRAR</button>
             </nav>
         </div>    
     </header>
