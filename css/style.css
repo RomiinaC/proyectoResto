@@ -46,7 +46,7 @@ img {
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    padding: 1%;
+    padding: 1% 2%;
     background: linear-gradient(0deg, #d8ccba,#d8ccba, #ffffff,#ffffff, #0d0d0d2f);
     height: 15vh;
 }
@@ -454,6 +454,15 @@ fieldset {
         display: flex;
         align-items: center;
         width: 100%;
+        align-items: baseline;
+        justify-content: space-evenly;
+        gap:0;
+    }
+    #menu-abrir {
+        order: 1;
+    }
+    #navbar {
+        order: -1;
     }
     .navbar{
         visibility: visible;
@@ -461,10 +470,10 @@ fieldset {
         background-color: transparent;
         position: relative;
         flex-direction: row;
-        justify-content: space-evenly;
-        padding: 1%;
+        padding: 0;
         border: none;
         box-shadow: 0 0 0;
+        height: 6vh;
     }
     .nav-items {
         display: flex;
