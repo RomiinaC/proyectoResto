@@ -32,7 +32,6 @@ function validarPass(input) {
     }
 }
 
-
 async function handlerValidarIngreso() {      
     let userOk = validarEntrada(inputUserId)
     let passOk = validarPass(inputPassw)  
@@ -46,13 +45,13 @@ async function handlerValidarIngreso() {
             if (data.datos) {
                 localStorage.setItem("userRegistrado", true)
                 userRegistrado = true
+                sessionStorage.setItem("access", userId )
             } 
         } catch (error) {
             console.error('Error al obtener cliente:', error)
     }}
     return userRegistrado
 }
-
 
 function completeField(input) {
     let campo = input.value.trim()
@@ -63,22 +62,10 @@ function completeField(input) {
     }
 }
    
-
 // userRegistrado = handlerValidarIngreso();
 userLogueado = validarLogin()
 
-// async function getPerfil() {  
-//     let userId = inputUserId.value    
-//         try {
-//             const response = await fetch(`http://127.0.0.1:5000/api/login/perfil/${userId}`)
-//             const data = await response.json()
-//              return data
-//         } catch (error) {
-//             console.error('Error al obtener perfil:', error)
-//     }  
-// }
-
-if (userLogueado ) {
+if (userLogueado) {
     btnCerrar.className = "visible"
     perfil.className = "visible"
     linksAcceso.className ="oculto"
@@ -120,5 +107,3 @@ function enviarFormulario(event) {
         console.error('Error al enviar datos:', error)
     });
 }
-
-

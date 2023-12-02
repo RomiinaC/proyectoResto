@@ -44,3 +44,4 @@ function handlerCerrarSesion() {
         elemento.style.display = flag ? "block" : "none" 
     }    
 }
+
