@@ -44,17 +44,44 @@
             </nav>
         </div>    
     </header>
-    <main>
+    <main id="mainPerfil">
         <div id="container-perfil">
            
         </div>
         <div id="container-btn-perfil">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <!-- Button modal propio -->
+            <button class="boton" onclick="mostrarModal()">Cambiar contraseña</button>
+            <!-- Modal propio -->
+            <div id="miModal" class="modal">
+                <div class="modal-contenido">
+                    <h2>Cambiar contraseña:</h2>
+                    <form action="" method="POST" onsubmit="cambiarPassword(event)">
+                        <div>
+                            <label for="passwActual">Contraseña actual </label>
+                            <input type="password" id="passwActual" requerid>
+                        </div>
+                        <div>
+                            <label for="passwNew">Contraseña nueva </label>
+                            <input type="password" id="passwNew" required>
+                        </div>
+                        <div>
+                                <label for="passwNewRep">Repetir nueva contraseña</label>
+                                <input type="password" id="passwNewRep" required>
+                        </div>
+                        <div id="botones-container">
+                            <button type="button" class="pointer boton" onclick="cerrarModal()">Cancelar</button>
+                            <button type="submit" class="pointer boton">Guardar cambios</button>
+                        </div>        
+                    </form>    
+                </div>
+            </div>
+
+            <!-- Button trigger modal de Bootstrap -->
+            <button type="button" class="btn boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Eliminar cuenta
             </button>
   
-            <!-- Modal -->
+            <!-- Modal de Bootstrap -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -66,15 +93,15 @@
                             <p>¿Estas seguro de eliminar tu cuenta?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn" data-bs-dismiss="modal">Volver al perfil</button>
-                            <button type="button" class="btn  btn-secondary" onclick="eliminarUser()">Eliminar</button>
+                            <button type="button" class="btn boton" data-bs-dismiss="modal">Volver al perfil</button>
+                            <button type="button" class="btn boton" onclick="eliminarUser()">Eliminar</button>
                         </div>
                     </div>
                 </div>
             </div>      
         </div>
     </main>
-    <footer class="footer container">
+    <footer id="footerPerfil" class="footer container">
         <div class="footContacto">
             <h5>CONTACTO</h5>
             <ul>

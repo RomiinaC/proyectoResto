@@ -46,6 +46,7 @@ async function handlerValidarIngreso() {
                 localStorage.setItem("userRegistrado", true)
                 userRegistrado = true
                 sessionStorage.setItem("access", userId )
+                sessionStorage.setItem("accessPass", userPassw )
             } 
         } catch (error) {
             console.error('Error al obtener cliente:', error)
