@@ -47,12 +47,12 @@
             <h2>Ingresa</h2>
             <div>
                 <fieldset>
-                    <form method="" action="" id="formAcceso" name="formAcceso">
+                    <form method="POST" action="" id="formAcceso" name="formAcceso" onsubmit="handlerValidarIngreso(event)">
                         <label for="userId">Usuario <abbr title="required" aria-label="required"> * </abbr></label>
                         <input type="email" name="userId" id="userId" class="userId" autofocus required onchange="validarEntrada(this)">
                         <label for="password">Contraseña <abbr title="required" aria-label="required"> * </abbr></label>
                         <input type="password" name="password" id="password" class="password" required onchange="validarPass(this)">
-                        <input type="submit" value="Iniciar Sesion" class="btn" id="btnEnviar" onclick="handlerValidarIngreso()">
+                        <input type="submit" value="Iniciar Sesion" class="btn" id="btnEnviar">
                     </form>
                 </fieldset>
             </div>

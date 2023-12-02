@@ -32,21 +32,35 @@ function validarPass(input) {
     }
 }
 
-async function handlerValidarIngreso() {      
+async function handlerValidarIngreso(event) {  
+    event.preventDefault()    
     let userOk = validarEntrada(inputUserId)
     let passOk = validarPass(inputPassw)  
     let userId = inputUserId.value
     let userPassw = inputPassw.value
     
     if ( userOk && passOk ) {
+        const formData = {
+            "clave" : userPassw,
+            "email" : userId
+        }
         try {
-            const response = await fetch(`http://127.0.0.1:5000/api/login/${userId}/${userPassw}`)
+            const optionFetch = {
+                method : 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            }
+            const response = await fetch(`http://127.0.0.1:5000/api/login`, optionFetch)
             const data = await response.json()
+
             if (data.datos) {
                 localStorage.setItem("userRegistrado", true)
-                userRegistrado = true
                 sessionStorage.setItem("access", userId )
                 sessionStorage.setItem("accessPass", userPassw )
+                userRegistrado = true
+                location.reload()
             } 
         } catch (error) {
             console.error('Error al obtener cliente:', error)
