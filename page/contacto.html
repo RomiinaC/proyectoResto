@@ -53,13 +53,13 @@
         <section class="contacto" id="contactoForm">
             <h1>CONTACTO</h1>
             <div id="form-contact">
-                <form action="">
+                <form>
                     <label for="userName">Nombre <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="text" id="userName" name="userName" >
+                    <input type="text" id="userName" name="userName" onblur="completeField(this)">
                     <label for="userLastName">Apellido <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="text" id="userLastName" name="userLastName">
+                    <input type="text" id="userLastName" name="userLastName" onblur="completeField(this)">
                     <label for="email">Email <abbr title="required" aria-label="required"> * </abbr></label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" required onblur="validarEntrada(this)">
                     <label for="tel">Telefono</label>
                     <input type="tel" name="tel" id="tel">
                     <label for="motivo">Motivo</label>
