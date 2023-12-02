@@ -357,8 +357,27 @@ form p {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+/* formulario de contacto */
 .btn {
     border: outset;
+}
+#form-contact input, #form-contact select {
+    border: none;
+    border-bottom: 2px solid #d8ccba;
+    padding: 5px;
+
+}
+#form-contact textarea {
+    border: 2px solid #d8ccba;
+    padding: 5px;
+    margin-top: 2%;
+}
+#form-contact {
+    font-style: italic;
+    border:1px solid #693d24cb;
+    padding: 5%;
+    border-radius: 8px;
+    box-shadow: 5px 15px 25px 5px #4e2c1c;
 }
 /* pag perfil */
 #mainPerfil {
