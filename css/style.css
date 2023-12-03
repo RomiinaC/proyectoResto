@@ -151,7 +151,7 @@ a {
 }
 .inputNoValido {
     border: 1px solid #ff0000;
-    box-shadow: 0 0 3px 1px #ff0000;  ;
+    box-shadow: 0 0 2px 1px #ff0000;  ;
 }
 /* MAIN */
 
@@ -389,7 +389,7 @@ form input, form select {
     font-weight: bold;
 }
 #container-perfil h2 {
-    border-bottom: 2px solid #C8B49A;
+    border-bottom: 2px solid #d8ccba;
 }
 #container-perfil p {
     padding-left: 15%;

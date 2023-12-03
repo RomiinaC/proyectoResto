@@ -32,9 +32,9 @@ async function crearPlato(cat){
     const imagen = document.createElement("img")
     contenedorCat.className = "container-card"
     containerPlato.className = "tarjeta"
-    let nameForm = menuJson[i].nombre.replace(/\s+/g , '-')
+    let nameForm = menuJson[i].nombre.replace(/\s+/g , '-').toLowerCase()
    
-    img = await obtenerFoto(nameForm.toLowerCase()+".jpg")
+    img = await obtenerFoto(nameForm+".jpg")
 
     imagen.src = img
     imagen.alt = `Imagen de ${menuJson[i].nombre}`
@@ -54,16 +54,17 @@ async function crearPlato(cat){
 async function obtenerFoto(nombre) {
   try {
     const response = await fetch (`${URL}/api/menu/img/${nombre}`)
+    console.log(response)
     if(response.ok) {
-      const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        return url;
+      console.log(response.url)
+      return response.url
     } else {
         console.error(`Error al obtener la imagen. Código de estado: ${response.status}`);
         return null;
     }
   } catch (error) {
-    return console.log("Error al obtener foto", error)
+    console.log("Error al obtener foto", error)
+    return null
   }
 }
 
