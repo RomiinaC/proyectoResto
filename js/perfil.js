@@ -1,7 +1,7 @@
 const perfilUser = async function obtenerPerfil() {   
     const emailUser = sessionStorage.getItem("access")
         try {
-            const response = await fetch(`http://127.0.0.1:5000/api/login/perfil/${emailUser}`)
+            const response = await fetch(`${URL}/api/login/perfil/${emailUser}`)
             if (response.ok){
                 const data = await response.json()
                 let tablaPerfil = document.getElementById("container-perfil")
@@ -45,7 +45,7 @@ async function eliminarUser() {
         const optionFetch = {
             method : 'DELETE'
         }
-        const response = await fetch(`http://127.0.0.1:5000/api/login/perfil/${emailUser}`, optionFetch)
+        const response = await fetch(`${URL}/api/login/perfil/${emailUser}`, optionFetch)
         const data = await response.json()
         if (data.complete) {
             localStorage.removeItem("userRegistrado")
@@ -89,7 +89,7 @@ async function cambiarPassword(event) {
             },
             body: JSON.stringify(formData)
         }
-        const response = await fetch(`http://127.0.0.1:5000/api/login/perfil`, optionFetch)
+        const response = await fetch(`${URL}/api/login/perfil`, optionFetch)
         const data = await response.json()
         if (data.complete) {
             alert("Contraseña modificada exitosamente")

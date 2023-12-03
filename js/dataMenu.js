@@ -1,46 +1,75 @@
-async function obtenerPlatos(categoria) {
+let menuJson
+
+async function obtenerMenu(cat) {
     try {
-      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`);
+      const response = await fetch(`${URL}/api/menu/filter-c=${cat}`);
       const data = await response.json();
-      
-      return data.meals;
+      console.log(data)
+      return data
     
     } catch (error) {
-      console.error('Error al obtener platos con pastas:', error);
+      console.error('Error al obtener menu:', error);
       return null;
     }
-  }
-  
+}
 
-async function crearPlato(categoria, subtitulo){
-    const pastas = await obtenerPlatos(categoria)
-    console.log(pastas)
-    const menu = document.getElementById("contenedorTarjeta");
-    const titulo = document.createElement("h2")
-    titulo.innerText = subtitulo
-    titulo.className = "subtMenu"
-    menu.appendChild(titulo)
 
-    for ( let  i = 0 ; i < pastas.length ; i++ ) {
+async function crearPlato(cat){
+    const menuJson = await obtenerMenu(cat)
+    if ( menuJson !== null){
+    const contenedorMenu = document.getElementById("contenedorMenu")
+    const contenedorCat = document.createElement("div")
+    const tituloCat = document.createElement("h2")
+    tituloCat.innerText = cat
+    tituloCat.className = "subtMenu"
+    contenedorCat.appendChild(tituloCat)
+   
+    for ( let  i = 0 ; i < menuJson.length ; i++ ) {
     
-    const containerPastas = document.createElement("div");
-    const platoPasta = document.createElement("h3");
+    const containerPlato = document.createElement("div")
+    const namePlato = document.createElement("h3")
+
     const imagen = document.createElement("img")
+    contenedorCat.className = "container-card"
+    containerPlato.className = "tarjeta"
+    let nameForm = menuJson[i].nombre.replace(/\s+/g , '-')
+   
+    img = await obtenerFoto(nameForm.toLowerCase()+".jpg")
+
+    imagen.src = img
+    imagen.alt = `Imagen de ${menuJson[i].nombre}`
+    containerPlato.appendChild(imagen)
+    namePlato.innerText = menuJson[i].nombre
     
-    containerPastas.className = "tarjeta"
-    imagen.src = pastas[i].strMealThumb
-    imagen.alt = pastas[i].strMeal
-    
-    platoPasta.innerText = pastas[i].strMeal
-    
-    menu.appendChild(containerPastas)
-    containerPastas.appendChild(platoPasta)
-    containerPastas.appendChild(imagen)
-    
-}
-return 0
+    containerPlato.appendChild(namePlato)
+    contenedorCat.appendChild(containerPlato)
+    contenedorMenu.appendChild(contenedorCat)
+    } 
+    } else {
+    console.log("no se puedo encontrar menu")  
+} return
 }
 
-crearPlato("Pasta", "Pastas");
-crearPlato("Seafood", "Seafood")
-crearPlato("Dessert", "Dessert") 
+
+async function obtenerFoto(nombre) {
+  try {
+    const response = await fetch (`${URL}/api/menu/img/${nombre}`)
+    if(response.ok) {
+      const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        return url;
+    } else {
+        console.error(`Error al obtener la imagen. Código de estado: ${response.status}`);
+        return null;
+    }
+  } catch (error) {
+    return console.log("Error al obtener foto", error)
+  }
+}
+
+crearPlato("sopa")
+crearPlato("ensalada")
+crearPlato("pasta")
+crearPlato("carne roja")
+crearPlato("arroz")
+crearPlato("carne blanca")

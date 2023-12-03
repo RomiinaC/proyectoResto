@@ -1,3 +1,5 @@
+const URL = "http://127.0.0.1:5000"
+
 const nav = document.getElementById("navbar")
 const abrir = document.getElementById("menu-abrir")
 const cerrar = document.getElementById("menu-cerrar")
@@ -6,6 +8,7 @@ const inputUserId = document.getElementById("userId")
 const inputPassw = document.getElementById("password")
 const perfil = document.getElementById("link-perfil")
 const linksAcceso = document.getElementById("links-access")
+
 
 let userRegistrado = false
 let userLogueado = false

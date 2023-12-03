@@ -52,7 +52,7 @@ async function handlerValidarIngreso(event) {
                 },
                 body: JSON.stringify(formData)
             }
-            const response = await fetch(`http://127.0.0.1:5000/api/login`, optionFetch)
+            const response = await fetch(`${URL}/api/login`, optionFetch)
             const data = await response.json()
 
             if (data.datos) {
@@ -106,7 +106,7 @@ function enviarFormulario(event) {
     }
 
     // Enviar datos al servidor en formato JSON
-    fetch(`http://127.0.0.1:5000/api/login/new-user`, {
+    fetch(`${URL}/api/login/new-user`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

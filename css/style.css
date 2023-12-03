@@ -216,7 +216,7 @@ form {
 }
 form input, form .btn, form select {
     margin: 8% 0%;
-    height: 40px;
+    /* height: 40px; */
 }
 fieldset {
     margin-bottom: 30%;
@@ -361,7 +361,7 @@ form p {
 .btn {
     border: outset;
 }
-#form-contact input, #form-contact select {
+form input, form select {
     border: none;
     border-bottom: 2px solid #d8ccba;
     padding: 5px;
@@ -377,11 +377,12 @@ form p {
     border:1px solid #693d24cb;
     padding: 5%;
     border-radius: 8px;
-    box-shadow: 5px 15px 25px 5px #4e2c1c;
+    box-shadow: 4px 8px 25px 4px #4e2c1c;
 }
 /* pag perfil */
 #mainPerfil {
     padding: 3% 8%;
+
 }
 #container-perfil h2, #container-perfil h4 {
     text-align: start;
@@ -391,7 +392,7 @@ form p {
     border-bottom: 2px solid #C8B49A;
 }
 #container-perfil p {
-    margin-left: 15%;
+    padding-left: 15%;
 }
 /* Estilos para el modal */
 .modal {
@@ -408,7 +409,7 @@ form p {
     background-color: #fff;
     margin: 10% auto;
     padding: 5%;
-    width: 90%;
+    width: 80%;
     position: relative;
     box-shadow: -10px 10px 10px 0px #4e2c1c;
     border-radius: 8px;
@@ -465,7 +466,7 @@ form p {
 
 form input, form .btn {
     margin: 8% 0%;
-    height: 40px;
+    /* height: 40px; */
 }
 fieldset {
     width: 80%; 
