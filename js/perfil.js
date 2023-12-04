@@ -1,4 +1,4 @@
-const perfilUser = async function obtenerPerfil() {   
+const perfilUser = async () =>  {   
     const emailUser = sessionStorage.getItem("access")
         try {
             const response = await fetch(`${URL}/api/login/perfil/${emailUser}`)

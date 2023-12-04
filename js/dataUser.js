@@ -61,7 +61,9 @@ async function handlerValidarIngreso(event) {
                 sessionStorage.setItem("accessPass", userPassw )
                 userRegistrado = true
                 location.reload()
-            } 
+            } else {
+                alert("Usuario y/o contraseña no validos")
+            }
         } catch (error) {
             console.error('Error al obtener cliente:', error)
     }}
@@ -84,6 +86,7 @@ if (userLogueado) {
     btnCerrar.className = "visible"
     perfil.className = "visible"
     linksAcceso.className ="oculto"
+
 
     mostrar(bienvenida , true)
     mostrar(acceso, false)
