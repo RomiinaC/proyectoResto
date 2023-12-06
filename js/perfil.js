@@ -1,5 +1,6 @@
 async function perfilUser()  {   
     const emailUser = sessionStorage.getItem("access")
+    const btnEliminarCuenta = document.getElementById("btnEliminarCuenta")
         try {
             const response = await fetch(`${URL}/api/login/perfil/${emailUser}`)
             if (response.ok){
@@ -17,7 +18,8 @@ async function perfilUser()  {
                 if (data[0].tel === ""){
                     tablaPerfil.innerHTML += `<p> - </p>`
                 } else {
-                    tablaPerfil.innerHTML += `<p>${data[0].tel}</p>`}
+                    tablaPerfil.innerHTML += `<p>${data[0].tel}</p>`
+                }
                 tablaPerfil.innerHTML += "<h2>Datos de la cuenta</h2>"
                 tablaPerfil.innerHTML += "<h4>Usuario:</h4>"
                 tablaPerfil.innerHTML += `<p>${data[0].email}</p>`
@@ -27,6 +29,9 @@ async function perfilUser()  {
                 tablaPerfil.innerHTML += `<p>${claveOculta}</p>`
                 const btnModales = document.getElementById("container-btn-perfil")
                 btnModales.className = "visible"
+                if(data[0].email == ADMIN ){ 
+                    btnEliminarCuenta.className = "oculto"}
+               
              return data
             } else {
                 throw new Error("No se encontro el perfil") // lanza el error a catch
