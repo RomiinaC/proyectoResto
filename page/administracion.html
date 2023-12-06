@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perugia</title>
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon-16x16.png">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html"><img src="../image/logo.png" alt="Logo Perugia Restaurante" id="logo"></a>
+        <div class="user-nav">
+            <button class="menu-abrir" id="menu-abrir"><i class='bx bx-menu bx-sm'></i></button>
+            <div class="dropdown">
+                <button id="menu-user"><i class='bx bxs-user bx-sm '></i></button>
+                <div class="dropdown-content">
+                    <div id="links-access">
+                        <a href="acceso-user.html">Acceder</a>
+                        <a href="acceso-user.html#formNewUser">Registrate</a>
+                    </div>
+                    <div id="link-perfil" class="oculto">
+                        <a href="perfil.html">Perfil</a>
+                        <a href="administracion.html">Administracion</a>
+                    </div>                    
+                    <button id="cerrarSesion" class="oculto" onclick="handlerCerrarSesion()"><i class='bx bx-log-out bx-sm'></i></button>
+                </div>
+            </div>
+            <nav class="navbar" id="navbar">  
+                <ul class="nav-items">
+                    <li><a href="../index.html#home">HOME</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="bodega.html">BODEGA</a></li>
+                    <li><a href="reserva.html">RESERVAS</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+                <button class="menu-cerrar" id="menu-cerrar"><i class='bx bx-x'></i>CERRAR</button>
+            </nav>
+        </div>    
+    </header>
+    <main id="mainAdmins">
+        <div id="container-table-admin">
+            <div class="container-xl">
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <div class="table-title" id="table-title">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>Listado de empleados</h2>
+                                </div>
+                                <div class="col-sm-4" id="btnAddEmpleado">
+                                    <a href="#addEmplModal" class="btn boton-color" data-bs-toggle="modal"> <span>AGREGAR EMPLEADO</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-sm table-hover" id="tablaEmpleados">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-3">Apellido</th>
+                                    <th class="col-md-3">Nombre</th>
+                                    <th class="col-md-3">DNI</th>
+                                    <th class="col-md-3"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpoTablaEmpl">
+                                <tr>
+                                    <td>nombre</td>
+                                    <td>apellido</td>
+                                    <td>12345678</td>
+                                    <td>
+                                        <a href="#dataEmplModal" class="plus" data-bs-toggle="modal"><i class='bx bxs-plus-square'></i></a>
+                                        <a href="#editEmplModal" class="edit" data-bs-toggle="modal"><i class='bx bx-edit'></i></a>
+                                        <a href="#deleteEmplModal" class="delete" data-bs-toggle="modal"><i class='bx bxs-trash' ></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container-modals">
+            <!-- Modal agregar empleado -->
+            <div id="addEmplModal" tabindex="-1" class="modal fade" aria-labelledby="addEmplModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="titleModalAdd">Agregar Empleado</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form method="POST"  id="formAddEmpl" name="formAddEmpl" onsubmit="agregarEmpleado(event)">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" id="inputNombreEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Apellido</label>
+                                    <input type="text" id="inputApellidoEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Puesto</label>
+                                    <select id="inputPuestoEmplAdd" name="inputPuestoEmplAdd"  class="form-control" required>
+                                        <option value="ADM">ADM</option>
+                                        <option value="ENC">ENC</option>
+                                        <option value="CHF">CHF</option>
+                                        <option value="AYC">AYC</option>
+                                        <option value="MZ">MZ</option>
+                                        <option value="RC">RC</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo electronico</label>
+                                    <input type="email" id="inputEmailEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Clave</label>
+                                    <input type="password" id="inputClaveEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>DNI</label>
+                                    <input type="text" id="inputDniEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha de ingreso</label>
+                                    <input type="date" id="inputFechaIngEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Salario</label>
+                                    <input type="number" id="inputSalarioEmplAdd" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefono</label>
+                                    <input type="tel" id="inputTelEmplAdd" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Direccion</label>
+                                    <input type="text" id="inputDireccionEmplAdd" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha de nacimiento</label>
+                                    <input type="date" id="inputFechaNacEmplAdd" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+                                <input type="submit" class="btn btn-info" value="Agregar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal modificar empleado -->
+            <div id="editEmplModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="titleModalEdit" >Actualizar empleado</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form id="formEditEmpl" method="POST " onsubmit="modificarEmpleado(event)">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" id="inputNombreEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Apellido</label>
+                                    <input type="text" id="inputApellidoEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Puesto</label>
+                                    <select id="inputPuestoEmplEdit" name="inputPuestoEmplEdit"  class="form-control" required>
+                                        <option value="ADM">ADMIN</option>
+                                        <option value="ENC">ENCARGADO/A</option>
+                                        <option value="CHF">CHEF</option>
+                                        <option value="AYC">AYUDANTE COCINA</option>
+                                        <option value="MZ">MOZO/A</option>
+                                        <option value="RC">RECEPCION</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo electronico</label>
+                                    <input type="email" id="inputEmailEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Clave</label>
+                                    <input type="password" id="inputClaveEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>DNI</label>
+                                    <input type="text" id="inputDniEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha de ingreso</label>
+                                    <input type="date" id="inputFechaIngEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Salario</label>
+                                    <input type="number" id="inputSalarioEmplEdit" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefono</label>
+                                    <input type="tel" id="inputTelEmplEdit" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Direccion</label>
+                                    <input type="text" id="inputDireccionEmplEdit" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha de nacimiento</label>
+                                    <input type="date" id="inputFechaNacEmplEdit" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer ">
+                                <input id="inputIdEmplAModificar" type="hidden">
+                                <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
+                                <input type="submit" class="btn boton-color" value="Actualizar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal eliminar empleado-->
+            <div class="modal fade" id="deleteEmplModal"  aria-labelledby="deleteEmplModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="titleModalDelete">Eliminar empleado</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form id="formDeleteEmpl" method="POST" onsubmit="eliminarEmpleado(event)" >
+                            <div class="modal-body">
+                                <span>¿Estas seguro que quieres eliminar esta cuenta?</span>
+                            </div>
+                            <div class="modal-footer">
+                                
+                                    <input id="inputIdEmplABorrar" type="hidden">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button>
+                                    <button type="submit" class="btn boton-color" >Eliminar</button>
+                                </div>
+                        </form>  
+                    </div>
+                </div>
+            </div> 
+            <!-- Modal mostrar mas datos -->
+            <div class="modal fade" id="dataEmplModal"  aria-labelledby="dataEmplModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="titleModalData">Ficha personal</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="dataDetalle">
+
+                            </div>
+                        </div>
+                            <div class="modal-footer">
+                                <input id="inputIdEmplData" type="hidden">
+                                <button type="button" class="btn boton-color" data-bs-dismiss="modal" >Cerrar</button>
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </main>
+    <footer id="footerPerfil" class="footer container">
+        <div class="footContacto">
+            <h5>CONTACTO</h5>
+            <ul>
+                <li><i class='bx bx-world'></i> www.perugiaresto.com</li>
+                <li><i class='bx bxs-phone'></i> 4112233</li>
+                <li><i class='bx bxl-whatsapp' ></i><a href="https://api.whatsapp.com/"> 011 1500303456</a></li>
+                <li><i class='bx bxl-gmail'></i><a href="mailto:perugiaresto@gmail.com?subject=contactoWeb"> perugiaresto@gmail.com</a></li>
+                <li><i class='bx bxl-facebook-circle' ></i><a href="https://www.facebook.com/profile.php?id=61552548701108" target="_blank"> Perugia Restaurant</a></li>
+                <li><i class='bx bxl-instagram' ></i><a href="https://www.instagram.com/" target="_blank"> PerugiaOk</a></li>
+            </ul>
+        </div>
+        <div class="footSeccion">
+            <h5>SECCIONES</h5>
+            <ul>
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="acceso-user.html">Acceso</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="bodega.html">Bodega</a></li>
+                <li><a href="reserva.html">Reservas</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footLegal">
+            <h5>LEGALES</h5>
+            <ul>
+                <li>Copyright <i class='bx bxs-copyright' style='color:#ffffff'  ></i> 2023 CAC</li>
+                <li>Romina Carranza</li>
+                <li>Curso FullStack Python CAC</li>
+            </ul>
+        </div>
+    </footer>   
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

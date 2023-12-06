@@ -358,8 +358,10 @@ form p {
     transition: background-color 0.3s;
 }
 /* formulario de contacto */
-.btn {
-    border: outset;
+.boton-color {
+    background-color: #693d24;
+    color: #fff;
+    border-radius: 8px;
 }
 form input, form select {
     border: none;
@@ -424,7 +426,31 @@ form input, form select {
 .pointer {
     cursor: pointer;
 }
+/* pag administracion  */
 
+#container-table-admin {
+    margin: 5%;
+}
+#table-title{
+    margin-bottom: 5%;
+}
+#container-table-admin th {
+    background-color: #d8ccba;
+}
+#tablaEmpleados td {
+    border-bottom: 3px solid #d8ccba;
+}
+#dataDetalle h4 {
+    text-align: start;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-bottom: 4px solid #d8ccba ;
+}
+#dataDetalle p {
+    text-align: center;
+    text-transform: uppercase;
+    background-color:  #d8ccba31 ;
+}
 /* FOOTER*/
 .footer {
     background-color: #0d0d0d;
