@@ -5,6 +5,8 @@ const formAcceso = document.getElementById("formAcceso")
 
 const btnEnviar = document.getElementById("btnEnviar")
 
+const accesoAdmin = document.getElementById("accessAdmin")
+
 // Función de validación de dirección de correo electrónico
 function validarEntrada(input) {
     const regex = /[a-z0-9._%\-]+@[a-z]+\.[a-z][a-z]+$/i  
@@ -84,9 +86,14 @@ userLogueado = validarLogin()
 
 if (userLogueado) {
     btnCerrar.className = "visible"
-    perfil.className = "visible"
     linksAcceso.className ="oculto"
-
+     perfil.className = "visible"
+    // const emailUser = sessionStorage.getItem("access")
+    // console.log(emailUser)
+    // if(emailUser !== ADMIN){
+    //     accesoAdmin.style.display = "none"
+    // }
+   
 
     mostrar(bienvenida , true)
     mostrar(acceso, false)

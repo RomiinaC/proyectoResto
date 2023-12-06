@@ -28,8 +28,14 @@ function validarLogin() {
 userLogueado = validarLogin()
 if (userLogueado) {
     btnCerrar.className = "visible"
-    perfil.className = "visible"
     linksAcceso.className = "oculto"
+    perfil.className = "visible"
+    const emailUser = sessionStorage.getItem("access")
+    console.log(emailUser)
+    if(emailUser !== ADMIN){
+        document.getElementById("accessAdmin").classList.add("oculto");
+    }
+    
 }
 
 function handlerCerrarSesion() {

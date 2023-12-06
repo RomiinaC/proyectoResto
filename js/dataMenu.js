@@ -4,9 +4,7 @@ async function obtenerMenu(cat) {
     try {
       const response = await fetch(`${URL}/api/menu/filter-c=${cat}`);
       const data = await response.json();
-      console.log(data)
-      return data
-    
+      return data   
     } catch (error) {
       console.error('Error al obtener menu:', error);
       return null;

@@ -3,7 +3,7 @@ const atras = document.getElementById("atrasCarrusel")
 const adelante = document.getElementById("adelanteCarrusel")
 const foto = document.querySelector(".imgCarrusel")
 
-const fotosCarrusel = ["../image/Perugia-banner(2).png","../image/good-wine.jpg", "../image/chefs-cooking.jpg"]
+const fotosCarrusel = ["../image/PERUGIA-bg.png","../image/Perugia-banner(2).png","../image/staff/good-wine.jpg", "../image/staff/chefs-cooking.jpg"]
 let posicionActual = 0
 
 function pasarFoto() {
