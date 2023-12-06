@@ -1,6 +1,6 @@
 async function obtenerEmpleados() {
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/admin/empleados`)
+      const response = await fetch(`${URL}/api/admin/empleados`)
       if (response.ok) {
         const data = await response.json()
       return data
@@ -23,11 +23,12 @@ async function mostrarTablaEmpleados(){
     
     cuerpoDeTabla.innerHTML = ""
     datosJson.empleados.forEach( empl => {
-      const fila = document.createElement('tr');
-      fila.innerHTML = nuevaFila(empl);
-      cuerpoDeTabla.appendChild(fila);
-
- } )
+        if (empl.email !== ADMIN){
+            const fila = document.createElement('tr')
+            fila.innerHTML = nuevaFila(empl)
+            cuerpoDeTabla.appendChild(fila)
+        }
+    } )
 }
         
 
