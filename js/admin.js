@@ -70,7 +70,7 @@ async function agregarEmpleado(event) {
             body: formData
         }
         // Enviar datos al servidor en formato formData
-        const response = await fetch(`http://127.0.0.1:5000/api/admin/empleados`, optionFetch )
+        const response = await fetch(`${URL}/api/admin/empleados`, optionFetch )
         
         if (response.ok) {
                 alert("Empleado ha sido agregado exitosamente")
@@ -162,7 +162,7 @@ mostrarData(id_em)
 
 async function mostrarData(id){
         try {
-        const response = await fetch(`http://127.0.0.1:5000/api/admin/empleados/${id}`)
+        const response = await fetch(`${URL}/api/admin/empleados/${id}`)
             if (response.ok) {
             const data = await response.json()
             const containerData = document.getElementById("dataDetalle")
