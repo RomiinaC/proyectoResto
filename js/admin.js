@@ -192,21 +192,21 @@ async function cargarPlaceholders(){
     const id = btnInputIdEmpleado.value
     datos = await mostrarData(id)
     const nombre = document.getElementById("inputNombreEmplEdit")
-    nombre.placeholder = datos.nombre
-    document.getElementById("inputApellidoEmplEdit").placeholder = datos.apellido
-    document.getElementById("inputPuestoEmplEdit").placeholder = datos.puesto
-    document.getElementById("inputClaveEmplEdit").placeholder = datos.clave
-    document.getElementById("inputEmailEmplEdit").placeholder = datos.email
-    document.getElementById("inputDniEmplEdit").placeholder = datos.dni
-    document.getElementById("inputFechaIngEmplEdit").placeholder = datos.fecha_ingreso
-    document.getElementById("inputSalarioEmplEdit").placeholder = datos.salario
+    nombre.value = datos.nombre
+    document.getElementById("inputApellidoEmplEdit").value = datos.apellido
+    document.getElementById("inputPuestoEmplEdit").value = datos.puesto
+    document.getElementById("inputClaveEmplEdit").value = datos.clave
+    document.getElementById("inputEmailEmplEdit").value = datos.email
+    document.getElementById("inputDniEmplEdit").value = datos.dni
+    document.getElementById("inputFechaIngEmplEdit").value = datos.fecha_ingreso
+    document.getElementById("inputSalarioEmplEdit").value = datos.salario
     if(!datos.tel) { 
-        document.getElementById("inputTelEmplEdit").placeholder = "-"
-    } else {document.getElementById("inputTelEmplEdit").placeholder = datos.tel}
+        document.getElementById("inputTelEmplEdit").value = "-"
+    } else {document.getElementById("inputTelEmplEdit").value = datos.tel}
     if(!datos.direccion) { 
-        document.getElementById("inputDireccionEmplEdit").placeholder = "-"
-    } else {document.getElementById("inputDireccionEmplEdit").placeholder = datos.direccion}
+        document.getElementById("inputDireccionEmplEdit").value = "-"
+    } else {document.getElementById("inputDireccionEmplEdit").value = datos.direccion}
     
-    document.getElementById("inputFechaNacEmplEdit").placeholder = datos.fecha_nac
+    document.getElementById("inputFechaNacEmplEdit").value = datos.fecha_nac
    
 }
