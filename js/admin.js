@@ -23,7 +23,7 @@ async function mostrarTablaEmpleados(){
     
     cuerpoDeTabla.innerHTML = ""
     datosJson.empleados.forEach( empl => {
-        if (empl.puesto !== ADMIN){
+        if (empl.email !== ADMIN){
             const fila = document.createElement('tr')
             fila.innerHTML = nuevaFila(empl)
             cuerpoDeTabla.appendChild(fila)
