@@ -89,6 +89,7 @@ const btnInputIdEmpleado= document.getElementById("inputIdEmplAModificar")
 document.getElementById("editEmplModal").addEventListener('show.bs.modal', evt => {
 const id_empl = evt.relatedTarget.getAttribute('data-bs-empleado-id_empleado')
 btnInputIdEmpleado.value = id_empl
+cargarPlaceholders()
 })
 async function modificarEmpleado(event) {
     event.preventDefault()
@@ -174,7 +175,8 @@ async function mostrarData(id){
                 } else {
                     containerData.innerHTML += `<p>${data[dato]}</p> `
                 } 
-            }    
+            }  
+            return data  
         } else {
               return "Error al obtener datos del empleado"
         }
@@ -185,3 +187,26 @@ async function mostrarData(id){
         }
 }
 mostrarData()
+
+async function cargarPlaceholders(){
+    const id = btnInputIdEmpleado.value
+    datos = await mostrarData(id)
+    const nombre = document.getElementById("inputNombreEmplEdit")
+    nombre.placeholder = datos.nombre
+    document.getElementById("inputApellidoEmplEdit").placeholder = datos.apellido
+    document.getElementById("inputPuestoEmplEdit").placeholder = datos.puesto
+    document.getElementById("inputClaveEmplEdit").placeholder = datos.clave
+    document.getElementById("inputEmailEmplEdit").placeholder = datos.email
+    document.getElementById("inputDniEmplEdit").placeholder = datos.dni
+    document.getElementById("inputFechaIngEmplEdit").placeholder = datos.fecha_ingreso
+    document.getElementById("inputSalarioEmplEdit").placeholder = datos.salario
+    if(!datos.tel) { 
+        document.getElementById("inputTelEmplEdit").placeholder = "-"
+    } else {document.getElementById("inputTelEmplEdit").placeholder = datos.tel}
+    if(!datos.direccion) { 
+        document.getElementById("inputDireccionEmplEdit").placeholder = "-"
+    } else {document.getElementById("inputDireccionEmplEdit").placeholder = datos.direccion}
+    
+    document.getElementById("inputFechaNacEmplEdit").placeholder = datos.fecha_nac
+   
+}
