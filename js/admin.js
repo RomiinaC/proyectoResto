@@ -35,8 +35,8 @@ async function mostrarTablaEmpleados(){
 
 const nuevaFila = empleadoData => { 
   return `
-  <td>${empleadoData.nombre}</td>
   <td>${empleadoData.apellido}</td>
+  <td>${empleadoData.nombre}</td>
   <td>${empleadoData.dni}</td>
   <td>
       <a href="#dataEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bxs-plus-square'></i></a>

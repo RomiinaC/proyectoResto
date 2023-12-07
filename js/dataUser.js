@@ -125,10 +125,14 @@ function enviarFormulario(event) {
     })
     .then(response => {
         if (response.ok) {
+            alert("Su usuario ha sido creado exitosamente")
              window.location.href = "../index.html"
-        }    
+        }   else {
+            alert("No se ha podido crear usuario. Intentelo mas tarde.")
+        } 
     })
     .catch(error => {
+        
         console.error('Error al enviar datos:', error)
     });
 }
