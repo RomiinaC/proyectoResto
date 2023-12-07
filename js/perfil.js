@@ -43,6 +43,10 @@ async function perfilUser()  {
 }
 
 perfilUser()
+if (sessionStorage.getItem("access") == ADMIN) {
+    document.getElementById("accessAdmin").className = "visible"
+    document.getElementById("accessAdmin").className = "boton-color"
+}
 
 async function eliminarUser() {
     const emailUser = sessionStorage.getItem("access")

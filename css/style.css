@@ -149,9 +149,7 @@ a {
 .oculto {
     display: none;
 }
-#accessAdminLink.oculto {
-    display: none;
-}
+
 .inputNoValido {
     border: 1px solid #ff0000;
     box-shadow: 0 0 2px 1px #ff0000;  ;
@@ -387,6 +385,7 @@ form input, form select {
 /* pag perfil */
 #mainPerfil {
     padding: 3% 8%;
+    position: relative;
 
 }
 #container-perfil h2, #container-perfil h4 {
@@ -429,10 +428,17 @@ form input, form select {
 .pointer {
     cursor: pointer;
 }
+#accessAdmin {
+    padding: 1%;
+    margin-bottom: 5%;
+    position: absolute;
+    right: 5%;
+}
 /* pag administracion  */
 
 #container-table-admin {
     margin: 5%;
+    right: 0
 }
 #table-title{
     margin-bottom: 5%;
