@@ -1,5 +1,6 @@
+
 async function perfilUser()  {   
-    const emailUser = sessionStorage.getItem("access")
+    const emailUser = localStorage.getItem("access")
     const btnEliminarCuenta = document.getElementById("btnEliminarCuenta")
         try {
             const response = await fetch(`${URL}/api/login/perfil/${emailUser}`)
@@ -29,9 +30,15 @@ async function perfilUser()  {
                 tablaPerfil.innerHTML += `<p>${claveOculta}</p>`
                 const btnModales = document.getElementById("container-btn-perfil")
                 btnModales.className = "visible"
-                if(data[0].email == ADMIN ){ 
+                if(ADMIN.includes(data[0].email) ){ 
+                    console.log(ADMIN.includes(data[0].email))
                     btnEliminarCuenta.className = "oculto"}
-               
+                if (ADMIN.includes(localStorage.getItem("access"))) {
+                    console.log(ADMIN.includes(localStorage.getItem("access")))
+                    document.getElementById("accessAdmin").className = "boton-color"
+                    document.getElementById("accessAdmin").classList.add("visible")
+                    document.getElementById("accessPlatos").className = "visible"
+                }
              return data
             } else {
                 throw new Error("No se encontro el perfil") // lanza el error a catch
@@ -43,13 +50,10 @@ async function perfilUser()  {
 }
 
 perfilUser()
-if (sessionStorage.getItem("access") == ADMIN) {
-    document.getElementById("accessAdmin").className = "visible"
-    document.getElementById("accessAdmin").className = "boton-color"
-}
+
 
 async function eliminarUser() {
-    const emailUser = sessionStorage.getItem("access")
+    const emailUser = localStorage.getItem("access")
     try {
         const optionFetch = {
             method : 'DELETE'
@@ -80,8 +84,8 @@ function cerrarModal() {
 
 async function cambiarPassword(event) {
     event.preventDefault()
-    const emailUser = sessionStorage.getItem("access")
-    const userPass = sessionStorage.getItem("accessPass")
+    const emailUser = localStorage.getItem("access")
+    const userPass = localStorage.getItem("accessPass")
     const passActual = document.getElementById("passwActual").value
     const passNew = document.getElementById("passwNew").value
     const passRep = document.getElementById("passwNewRep").value
@@ -102,7 +106,7 @@ async function cambiarPassword(event) {
         const data = await response.json()
         if (data.complete) {
             alert("Contraseña modificada exitosamente")
-            sessionStorage.setItem("accessPass", passNew)
+            localStorage.setItem("accessPass", passNew)
             window.location.href = "../page/acceso-user.html"
             perfilUser()
             }

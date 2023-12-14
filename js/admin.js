@@ -1,3 +1,5 @@
+
+
 async function obtenerEmpleados() {
     try {
       const response = await fetch(`${URL}/api/admin/empleados`)
@@ -10,44 +12,45 @@ async function obtenerEmpleados() {
 
     } catch (error) {
       console.error('Error al obtener lista de empleados', error)
-      return null;
+      return null
     }
 }
 
-
-
 async function mostrarTablaEmpleados(){
-    const datosJson = await obtenerEmpleados()
+    try {
+        const datosJson = await obtenerEmpleados()
+        const cuerpoDeTabla = document.getElementById("cuerpoTablaEmpl")
     
-    const cuerpoDeTabla = document.getElementById("cuerpoTablaEmpl")
-    
-    cuerpoDeTabla.innerHTML = ""
-    datosJson.empleados.forEach( empl => {
-        if (empl.email !== ADMIN){
+        cuerpoDeTabla.innerHTML = ""
+        datosJson.empleados.forEach( empl => {
+            if (empl.email != ADMINPRINCIPAL){
             const fila = document.createElement('tr')
             fila.innerHTML = nuevaFila(empl)
             cuerpoDeTabla.appendChild(fila)
-        }
-    } )
+            }
+        })
+    }
+    catch (error) {
+        console.error('Error al obtener tabla de empleados', error)
+        alert('Error al obtener tabla de empleados', error)
+        return null  
+    }
 }
         
-
-
 const nuevaFila = empleadoData => { 
   return `
-  <td>${empleadoData.apellido}</td>
-  <td>${empleadoData.nombre}</td>
-  <td>${empleadoData.dni}</td>
-  <td>
-      <a href="#dataEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bxs-plus-square'></i></a>
-      <a href="#editEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bx-edit'></i></a>
-      <a href="#deleteEmplModal" class="delete" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bxs-trash' ></i></a>
-  </td>
-  `
+    <td>${empleadoData.apellido}</td>
+    <td>${empleadoData.nombre}</td>
+    <td>${empleadoData.dni}</td>
+    <td>
+        <a href="#dataEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bxs-plus-square'></i></a>
+        <a href="#editEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bx-edit'></i></a>
+        <a href="#deleteEmplModal" class="delete" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empleadoData.id_empleado}><i class='bx bxs-trash' ></i></a>
+    </td>
+    `
 }
 
 mostrarTablaEmpleados()
-
 
 async function agregarEmpleado(event) {
     event.preventDefault()
@@ -69,20 +72,48 @@ async function agregarEmpleado(event) {
         const optionFetch = {
             method: 'POST',
             body: formData
-        }
+            }
         // Enviar datos al servidor en formato formData
         const response = await fetch(`${URL}/api/admin/empleados`, optionFetch )
         
         if (response.ok) {
                 alert("Empleado ha sido agregado exitosamente")
                 window.location.href = "../page/administracion.html"
+        } else {
+            throw new Error('Error al agregar empleado.')
+            }  
+        const puesto = document.getElementById("inputPuestoEmplAdd").value
+        if (puesto == "ADM") {
+            const dataJson = {
+                "nombre" :document.getElementById("inputNombreEmplAdd").value,
+                "apellido" :document.getElementById("inputApellidoEmplAdd").value,
+                "clave" : document.getElementById("inputClaveEmplAdd").value,
+                "email" : document.getElementById("inputEmailEmplAdd").value,
+                "fecha_nac": document.getElementById("inputFechaNacEmplAdd").value,
+                "tel": document.getElementById("inputTelEmplAdd").value,
+                "id_restaurante": "1"
+            }
+            const optionFetch2 = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    },
+                body: JSON.stringify(dataJson)
+            }
+             // Enviar datos al servidor en formato Json
+            const resp = await fetch(`${URL}/api/login/new-user`, optionFetch2 )
+           
+            if (resp.ok) {
+                    console.log("Su usuario ha sido creado exitosamente")
+            }   else {
+                throw new Error('Error al agregar usuario.')
+            }
+            }
 
-            } else {
-                throw new Error('Error al agregar empleado.')
-            }   
         } catch (error) {
             console.error('Error:', error)
-        }
+            alert(`Error ${error}`)
+    }
 }
 
 const btnInputIdEmpleado= document.getElementById("inputIdEmplAModificar")
@@ -118,14 +149,42 @@ async function modificarEmpleado(event) {
 
     if (response.ok) {
         alert("Empleado ha sido modificado exitosamente")
-        window.location.href = "../page/administracion.html"
+        
 
         } else {
     throw new Error ("Error! No se pudo modificar datos del empleado")
     }
+    const puesto = document.getElementById("inputPuestoEmplEdit").value
+    if (puesto == "ADM") {
+        const dataJson = {
+            "nombre" :document.getElementById("inputNombreEmplEdit").value,
+            "apellido" :document.getElementById("inputApellidoEmplEdit").value,
+            "clave" : document.getElementById("inputClaveEmplEdit").value,
+            "email" : document.getElementById("inputEmailEmplEdit").value,
+            "fecha_nac": document.getElementById("inputFechaNacEmplEdit").value,
+            "tel": document.getElementById("inputTelEmplEdit").value,
+            "id_restaurante": "1"
+        }
+        const optionFetch2 = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                },
+            body: JSON.stringify(dataJson)
+            }
+         // Enviar datos al servidor en formato Json
+        const resp = await fetch(`${URL}/api/login/new-user`, optionFetch2 )
+       
+        if (resp.ok) {
+                console.log("Su usuario ha sido creado exitosamente")
+        }   else {
+            throw new Error('Error al agregar usuario.')
+        }
+        }
 }  catch (error){
     console.error('Error:', error)
 }
+window.location.href = "../page/administracion.html"
 }
 
 
@@ -186,7 +245,6 @@ async function mostrarData(id){
             return null;
         }
 }
-mostrarData()
 
 async function cargarPlaceholders(){
     const id = btnInputIdEmpleado.value

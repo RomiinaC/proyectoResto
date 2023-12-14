@@ -1,4 +1,3 @@
-
 const acceso = document.getElementById("acceso")
 const bienvenida = document.getElementById("bienvenidaUser")
 const formAcceso = document.getElementById("formAcceso")
@@ -59,8 +58,8 @@ async function handlerValidarIngreso(event) {
 
             if (data.datos) {
                 localStorage.setItem("userRegistrado", true)
-                sessionStorage.setItem("access", userId )
-                sessionStorage.setItem("accessPass", userPassw )
+                localStorage.setItem("access", userId )
+                localStorage.setItem("accessPass", userPassw )
                 userRegistrado = true
                 location.reload()
             } else {
@@ -88,12 +87,6 @@ if (userLogueado) {
     btnCerrar.className = "visible"
     linksAcceso.className ="oculto"
      perfil.className = "visible"
-    // const emailUser = sessionStorage.getItem("access")
-    // console.log(emailUser)
-    // if(emailUser !== ADMIN){
-    //     accesoAdmin.style.display = "none"
-    // }
-   
 
     mostrar(bienvenida , true)
     mostrar(acceso, false)
