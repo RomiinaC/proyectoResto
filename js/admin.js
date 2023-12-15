@@ -23,11 +23,17 @@ async function mostrarTablaEmpleados(){
     
         cuerpoDeTabla.innerHTML = ""
         datosJson.empleados.forEach( empl => {
-            if (!ADMIN.includes(empl.email)){
+            if (ADMINPRINCIPAL == localStorage.getItem("access")) { //admin principal logueado
+                if (empl.email !== ADMINPRINCIPAL){ //crea todos los registros menos el del admin principal
+                    const fila = document.createElement('tr')
+                    fila.innerHTML = nuevaFila(empl)
+                    cuerpoDeTabla.appendChild(fila)
+                }      
+            } else if (!ADMIN.includes(empl.email)){ //Crea todos los registro de empleados no ADM
                 const fila = document.createElement('tr')
                 fila.innerHTML = nuevaFila(empl)
                 cuerpoDeTabla.appendChild(fila)
-            } else if (empl.email !== ADMINPRINCIPAL && empl.email == localStorage.getItem("access")){
+            } else if (empl.email !== ADMINPRINCIPAL && empl.email == localStorage.getItem("access")){ //crea el registro del ADM loguado
                 const fila = document.createElement('tr')
                 fila.innerHTML = `
                 <td>${empl.apellido}</td>
@@ -40,6 +46,7 @@ async function mostrarTablaEmpleados(){
                 `
                 cuerpoDeTabla.appendChild(fila)
             }
+           
         })
     }
     catch (error) {
