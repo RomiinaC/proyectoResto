@@ -107,7 +107,7 @@ async function cambiarPassword(event) {
         if (data.complete) {
             alert("Contraseña modificada exitosamente")
             localStorage.setItem("accessPass", passNew)
-            window.location.href = "../page/acceso-user.html"
+            window.location.href = "../page/perfil.html"
             perfilUser()
             }
         } catch (error) {

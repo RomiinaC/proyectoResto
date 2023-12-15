@@ -23,10 +23,22 @@ async function mostrarTablaEmpleados(){
     
         cuerpoDeTabla.innerHTML = ""
         datosJson.empleados.forEach( empl => {
-            if (empl.email != ADMINPRINCIPAL){
-            const fila = document.createElement('tr')
-            fila.innerHTML = nuevaFila(empl)
-            cuerpoDeTabla.appendChild(fila)
+            if (!ADMIN.includes(empl.email)){
+                const fila = document.createElement('tr')
+                fila.innerHTML = nuevaFila(empl)
+                cuerpoDeTabla.appendChild(fila)
+            } else if (empl.email !== ADMINPRINCIPAL && empl.email == localStorage.getItem("access")){
+                const fila = document.createElement('tr')
+                fila.innerHTML = `
+                <td>${empl.apellido}</td>
+                <td>${empl.nombre}</td>
+                <td>${empl.dni}</td>
+                <td>
+                    <a href="#dataEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empl.id_empleado}><i class='bx bxs-plus-square'></i></a>
+                    <a href="#editEmplModal" class="edit" data-bs-toggle="modal" data-bs-empleado-id_empleado=${empl.id_empleado}><i class='bx bx-edit'></i></a>
+                </td>
+                `
+                cuerpoDeTabla.appendChild(fila)
             }
         })
     }
@@ -180,6 +192,21 @@ async function modificarEmpleado(event) {
         }   else {
             throw new Error('Error al agregar usuario.')
         }
+
+        const optionFetch3 = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+                },
+            body: JSON.stringify(dataJson)
+            }
+        const res = await fetch(`${URL}/api/login/perfil/${id_empl}`, optionFetch3 )
+    
+        if (res.ok) {
+                console.log("Su usuario ha sido creado exitosamente")
+        }   else {
+            throw new Error('Error al modificar usuario.')
+        }
         }
 }  catch (error){
     console.error('Error:', error)
@@ -227,6 +254,7 @@ async function mostrarData(id){
             if (response.ok) {
             const data = await response.json()
             const containerData = document.getElementById("dataDetalle")
+            containerData.innerHTML = ''
             for(let dato in data){
                 containerData.innerHTML += `<h4>${dato}:</h4>`
                 if( !data[dato]){
