@@ -84,7 +84,7 @@ Elección de la familia sans-serif por su fácil lectura y trazos limpios que de
 
 **Client:** HTML5, CCS3, JavaScript, VueJS, Bootstrap.
 
-**Server:** Flask, MYSQLAlchemy
+**Server:** Flask, MYSQLAlchemy, Python
 
 
 ## Run Locally
@@ -100,7 +100,7 @@ Clone the project
 
 This project is used by:
 
-- Curso Full-Stack Ptyhon Codo A Codo 2023
+- Curso Full-Stack Python Codo A Codo 2023
 
 
 
@@ -119,8 +119,8 @@ romii.carranza@gmail.com.com
 
 
 ## About me
-Actualmente estoy cursando Full-stack Python de Codo a Codo 2.0 de AALV.
-Curso para el cual fue desarrollado este proyecto.  
+Actualmente estoy cursando Full-stack Python de Codo a Codo 2.0 de AAALV.
+Este proyecto fue desarrollado como proyecto evaluador final de dicho curso.
 
 
 
